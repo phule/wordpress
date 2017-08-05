@@ -1,0 +1,116 @@
+.home-page section.partner{
+    text-align: center;
+    padding-top: 28px;
+    padding-bottom:70px;
+    background:$white;
+}
+.home-page section.partner h4{
+    font-size: $h4;
+    margin: 0 0 42px;
+    font-weight: normal;
+}
+.home-page section.partner .owl-carousel .owl-stage-outer{
+    margin-left: -13px;
+    margin-right: -13px;
+}
+.home-page section.partner .owl-carousel .owl-stage-outer .owl-item{
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.home-page section.partner .owl-carousel .owl-stage-outer .owl-item .item a{
+    width: 100%;
+    height: 145px;
+    display: block;
+    background: center center no-repeat;
+    background-size: contain;
+}
+.home-page section.partner .owl-carousel .owl-stage-outer .owl-item .item img{
+    max-height: 145px;
+    visibility: hidden;
+}
+.home-page section.partner .owl-carousel .owl-nav{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.home-page section.partner .owl-carousel .owl-nav div{
+    position: absolute;
+    height: 145px;
+    width: 46px;
+    top:0;
+    bottom: 0;
+    font-size: 0;
+    color: transparent;
+    background:url(../images/ui/pages/home/partner/arrow.png) no-repeat;
+    background-size: auto 68px;
+    pointer-events: auto;
+}
+.home-page section.partner .owl-carousel .owl-nav .owl-prev{
+    left: -72px;
+    background-position: left center;
+}
+.home-page section.partner .owl-carousel .owl-nav .owl-next{
+    right: -72px;
+    background-position: right center;
+}
+
+@media (max-width: 1199px) {
+    .home-page section.partner .owl-carousel{
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+    .home-page section.partner .owl-carousel .owl-stage-outer{
+        margin-left: inherit;
+        margin-right: inherit;
+    }
+    .home-page section.partner .owl-carousel .owl-nav .owl-prev{
+        left: 0;
+    }
+    .home-page section.partner .owl-carousel .owl-nav .owl-next{
+        right: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .home-page section.partner .owl-carousel{
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .home-page section.partner .owl-carousel .owl-nav div{
+        width: 35px;
+        background-size: auto 51px;
+    }
+}
+
+@media (max-width: 767px) {
+    .home-page section.partner{
+        padding-top: 14px;
+        padding-bottom: 35px;
+    }
+    .home-page section.partner h4{
+        margin: 0 0 21px;
+    }
+    .home-page section.partner .owl-carousel{
+        padding-left: 38px;
+        padding-right: 38px;
+    }
+    .home-page section.partner .owl-carousel .owl-nav div{
+        width: 23px;
+        background-size: auto 34px;
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:320px),
+only screen and (        min-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (              min-resolution:120dpi)      and (min-width:320px),
+only screen and (               min-resolution:2dppx)      and (min-width:320px){
+    .home-page section.partner .owl-carousel .owl-nav div{
+        background-image:url(../images/ui/pages/home/partner/arrow@3x.png);
+    }
+}

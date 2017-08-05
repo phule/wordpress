@@ -1,0 +1,175 @@
+.site-header{
+    height: 87px;
+    -webkit-transition: height 0.3s linear 0s;
+    -moz-transition: height 0.3s linear 0s;
+    -ms-transition: height 0.3s linear 0s;
+    -o-transition: height 0.3s linear 0s;
+    transition: height 0.3s linear 0s;
+}
+.site-header .fixed{
+    background: $base;
+    position: fixed;
+    right: 0;
+    top:0;
+    left: 0;
+    z-index: 9;
+    padding-top: 22px;
+    padding-bottom: 22px;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+.site-header .t-container{
+    width:inherit;
+}
+.site-header .hambeger{
+    display: none;    
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+.site-header .logo{
+    display: block;
+    float: left;
+    width: 268px;
+    height: 43px;
+    background: url(../images/ui/master/header/logo.png) center center no-repeat;
+    background-size: 268px auto;
+    overflow: hidden;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+.site-header .main-nav{
+    float: right;
+}
+.site-header .main-nav li{
+    padding-left: 35px;
+}
+.site-header .main-nav a{
+    display: inline-block;
+    color: #fdfeff;
+    text-decoration: none;
+    font-size: $s15;
+    line-height: 41px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s;
+}
+.site-header.smaller{
+    height: 53px;
+}
+.site-header.smaller .fixed{
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.site-header.smaller .logo{
+    width: 249px;
+    height: 40px;
+    background-size: 249px auto;
+}
+.site-header.smaller .main-nav a{
+    line-height: 39px;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        opacity: 0.9;
+        transform: translateY(0);
+    } 
+}
+
+@media (max-width: 1159px) {
+    .site-header .logo{
+        width: 80px;
+        background-image: url(../images/ui/master/header/logo-mobile.png);
+        background-size: 80px auto;
+    }
+    .site-header.smaller .logo{
+        width: 74px;
+        background-size: 74px auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-header .hambeger,
+    .site-header .hambeger:hover,
+    .site-header .hambeger:focus,
+    .site-header .hambeger:active,
+    .site-header .hambeger:visited{
+        display: block;
+        border:0;
+        background:transparent;
+        padding: 35px 15px;
+        position: absolute;
+        top:0;
+        right: 0;
+    }
+    .site-header.smaller .hambeger,
+    .site-header.smaller .hambeger:hover,
+    .site-header.smaller .hambeger:focus,
+    .site-header.smaller .hambeger:active,
+    .site-header.smaller .hambeger:visited{
+        padding: 18px 15px;
+    }
+    .site-header .hambeger .sr-only{
+        border: 0 none;
+        clip: rect(0px, 0px, 0px, 0px);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+    .site-header .hambeger .icon-bar{
+        background: $white;
+        border-radius: 4px;
+        height: 3px;
+        display: block;
+        width: 22px;
+    }
+    .site-header .hambeger .icon-bar + .icon-bar{
+        margin-top: 4px;
+    }
+    .site-header .main-nav{
+        display: none;
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:320px),
+only screen and (        min-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (              min-resolution:120dpi)      and (min-width:320px),
+only screen and (               min-resolution:2dppx)      and (min-width:320px){
+    .site-header .logo{
+        background-image: url(../images/ui/master/header/logo-mobile@3x.png);
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:1200px),
+only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:1200px),
+only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:1200px),
+only screen and (        min-device-pixel-ratio:1.25)      and (min-width:1200px),
+only screen and (              min-resolution:120dpi)      and (min-width:1200px),
+only screen and (               min-resolution:2dppx)      and (min-width:1200px){
+    .site-header .logo{
+        background-image: url(../images/ui/master/header/logo@3x.png);
+    }
+}

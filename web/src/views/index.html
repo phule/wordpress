@@ -1,0 +1,38 @@
+{% extends './master/main.html' %}
+
+{% block title %}Website - Index{% endblock %}
+
+{% block meta %}
+<meta name="description" content="2" />
+<meta name="keywords" content="3" />
+{% endblock %}
+
+{% block cssLibs %}
+<link rel="stylesheet" href="content/css/libs/owl.carousel.css">
+{% endblock %}
+
+{% block namepage %}home-page{% endblock %}
+
+{% block main %}
+
+    {% include "./content/pages/home/banner.html" %}
+
+    {% include "./content/pages/home/about.html" %}
+
+    {% include "./content/pages/home/partner.html" %}
+
+    {% include "./content/pages/home/mission.html" %}
+
+    {% include "./content/pages/home/games.html" %}
+
+    {% include "./content/pages/home/contact.html" %}
+
+{% endblock %}
+
+{% block scriptLibs %}
+<script type="text/javascript" src="content/js/libs/owl.carousel.js"></script>
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="content/js/pages/home.js"></script>
+{% endblock %}

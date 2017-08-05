@@ -1,0 +1,49 @@
+.home-page section.banner{
+    height: 720px;
+}
+.home-page .banner-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    background-color: #373737;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display:none;
+}
+.home-page .banner-bg video{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+    .home-page .banner-bg {
+        height: 300%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        top: 50%; 
+    }
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+    .home-page .banner-bg {
+        width: 300%;
+        -ms-transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        transform: translateX(-50%);
+        left: 50%; 
+    } 
+}
+
+@media (max-width: 767px) {        
+    .home-page .banner-bg video{
+        display:none;
+    }
+}

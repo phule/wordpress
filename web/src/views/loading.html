@@ -1,0 +1,32 @@
+{% extends './master/main.html' %}
+
+{% block title %}Website - Games{% endblock %}
+
+{% block meta %}
+<meta name="description" content="2" />
+<meta name="keywords" content="3" />
+{% endblock %}
+
+{% block namepage %}games-page{% endblock %}
+
+{% block main %}
+    <section class="games">
+        <div class="t-container">
+            <h4>GAMES</h4>
+
+            {% include "./content/pages/games/search.html" %}
+
+            {% include "./content/pages/games/sort.html" %}
+
+            {% include "./content/pages/games/list.html" %}
+
+        </div>
+    </section>
+{% endblock %}
+
+{% block scriptLibs %}{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="content/js/pages/games.js"></script>
+{% endblock %}
+

@@ -1,0 +1,164 @@
+.site-footer .t-container{
+    width:inherit;
+}
+.site-footer a{
+    color: $white;
+    text-decoration: none;
+}
+.site-footer header{
+    background: #1b1d1f;
+    min-height: 305px;
+    padding: 45px 0;
+    @include clearfix();
+}
+.site-footer header .t-nav{
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.site-footer header li{
+    width: 25%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.site-footer header dl{
+    margin: 0;
+    padding: 0;
+}
+.site-footer header dt{
+    color: $white;
+    border-bottom: 1px solid #474747;
+    font-size: $s18;
+    color: $white;
+    padding-bottom: 6px;
+    margin-bottom: 2px;
+}
+.site-footer header dd{
+    margin: 0;
+    padding: 13px 0 0;
+}
+.site-footer header dd a{
+    font-size: $s14;
+    color: $placeholder;
+    text-decoration: none;
+}
+.site-footer footer{
+    background: $base;
+    @include clearfix();
+}
+.site-footer footer .logo{
+    display: block;
+    float: left;
+}
+.site-footer footer .logo img{
+    width: 181px;
+    margin-top: 23px;
+}
+.site-footer footer nav{
+    float: right;
+    @include clearfix();
+}
+.site-footer footer nav .t-nav{
+    float: left;
+}
+.site-footer footer nav .policy-nav li{
+    font-size: $s18;
+    color: $placeholder;
+    line-height: 77px;
+}
+.site-footer footer nav .policy-nav li a{
+    color: $placeholder;
+    text-decoration: none;
+}
+.site-footer footer nav .policy-nav li{
+    padding-left: 22px;
+}
+.site-footer footer nav .policy-nav li:last-child{
+    padding-left: 31px;
+}
+.site-footer footer nav .socials-nav{
+    margin-left: 12px;
+}
+.site-footer footer nav .socials-nav li{
+    padding-left:39px;
+    padding-top: 27px;
+}
+.site-footer footer nav .socials-nav li a{
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url(../images/ui/master/footer/socials.png) center center no-repeat;
+    background-size: 22px auto;
+}
+.site-footer footer nav .socials-nav li.facebook a{
+    background-position: center 0;
+}
+.site-footer footer nav .socials-nav li.twitter a{
+    background-position: center -22px;
+}
+.site-footer footer nav .socials-nav li.instagram a{
+    background-position: center -44px;
+}
+.site-footer footer nav .socials-nav li.youtube a{
+    background-position: center -66px;
+}
+.site-footer footer nav .socials-nav li.google-plus a{
+    background-position: center -88px;
+}
+
+@media (max-width: 1199px) {
+    .site-footer footer .logo{
+        overflow: hidden;
+        width: 54px;
+    }
+    .site-footer footer nav .socials-nav li{
+        padding-left: 30px;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-footer header li{
+        width: 100%;
+        float:none;
+        margin-bottom:45px;
+    }
+    .site-footer header li:last-child{
+        margin-bottom:0;
+    }
+    .site-footer footer{
+        text-align: center;
+        padding:5px 0;
+    }
+    .site-footer footer .logo{
+        display: none;
+    }
+    .site-footer footer nav{
+        float: none;
+    }
+    .site-footer footer nav .t-nav{
+        float: none;
+    }
+    .site-footer footer nav .t-nav li{
+        float: none;
+        display: inline-block;
+        padding: 5px 10px;
+        line-height: 100%;
+    }
+    .site-footer footer nav .policy-nav li.copy{
+        display: block;
+    }
+    .site-footer footer nav .socials-nav{
+        margin-left: 0;
+    }
+}
+
+@media
+only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:320px),
+only screen and (        min-device-pixel-ratio:1.25)      and (min-width:320px),
+only screen and (              min-resolution:120dpi)      and (min-width:320px),
+only screen and (               min-resolution:2dppx)      and (min-width:320px){
+    .site-footer footer nav .socials-nav li a{
+        background-image: url(../images/ui/master/footer/socials@3x.png);
+    }
+}
