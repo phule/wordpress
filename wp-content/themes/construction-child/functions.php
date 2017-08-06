@@ -168,46 +168,47 @@ function display_footer_menu() {
     ).'' : '' );
 }
 include_once (ABSPATH."/wp-content/themes/construction-child/plugin/Customer_Walker_Nav_Menu.php");
+include_once (ABSPATH."/wp-content/themes/construction-child/plugin/Short_Code.php");
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-//require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-//require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-//require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/inc/customizer.php';
 /**
  * Customizer Option Fields
  */
-//require get_template_directory() . '/inc/admin-panel/cunstruction-customizer.php';
+require get_template_directory() . '/inc/admin-panel/cunstruction-customizer.php';
 /**
  * Construction Function
  */
- //require get_template_directory() . '/inc/construction-function.php';
+ require get_template_directory() . '/inc/construction-function.php';
 /**
  * Widget Fields
  */
-//require get_template_directory() . '/inc/admin-panel/widget/construction-widget.php';
+require get_template_directory() . '/inc/admin-panel/widget/construction-widget.php';
 /**
  * Team Widget
  */
-//require get_template_directory() . '/inc/admin-panel/widget/construction-team.php';
+require get_template_directory() . '/inc/admin-panel/widget/construction-team.php';
 /**
  * Recent Post Widget
  */
-//require get_template_directory() . '/inc/admin-panel/widget/construction-recent-post.php';
+require get_template_directory() . '/inc/admin-panel/widget/construction-recent-post.php';
 /**
  * Footer Info Widget
  */
-//require get_template_directory() . '/inc/admin-panel/widget/construction-info.php';
+require get_template_directory() . '/inc/admin-panel/widget/construction-info.php';
