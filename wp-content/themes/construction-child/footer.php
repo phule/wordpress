@@ -4,6 +4,7 @@ $construction_twitter_link = get_theme_mod('construction_twitter_link');
 $construction_youtube_link = get_theme_mod('construction_youtube_link');
 $construction_instagram_link = get_theme_mod('construction_instagram_link');
 $construction_googleplus_link = get_theme_mod('construction_googleplus_link');
+$construction_footer_text = get_theme_mod('construction_footer_text');
 ?>
     <div id="siteFooter" class="site-footer">
         <?php 
@@ -48,7 +49,7 @@ $construction_googleplus_link = get_theme_mod('construction_googleplus_link');
                 </a>
                 <nav>
                     <ul class="t-nav policy-nav">
-                        <li class="copy">@copy 2016 teointeractive</li>
+                        <li class="copy"><?php if(isset($construction_footer_text)) { echo $construction_footer_text;}?></li>
                         <li class="privacy"><a title="" href="">Privacy</a></li>
                         <li class="legal"><a title="" href="">Legal</a></li>
                     </ul>
