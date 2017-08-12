@@ -144,6 +144,8 @@ function construction_scripts() {
     wp_enqueue_script('ui_core_js', get_template_directory_uri() . '/content/js/ui-core.js');
 	wp_enqueue_script('ui_master_js', get_template_directory_uri() . '/content/js/ui-master.js');
     wp_enqueue_script('home_js',get_theme_file_uri('/content/js/pages/home.js'));
+    wp_enqueue_script('details_js',get_theme_file_uri('/content/js/pages/details.js'));
+    //wp_enqueue_script('games_js',get_theme_file_uri('/content/js/pages/games.js'));
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
@@ -166,6 +168,12 @@ function display_footer_menu() {
             'container_class'    => 'footer-menu'
         )
     ).'' : '' );
+}
+add_filter('next_posts_link_attributes', 'posts_link_attributes');
+add_filter('previous_posts_link_attributes', 'posts_link_attributes');
+
+function posts_link_attributes() {
+    return 'class="button"';
 }
 include_once (ABSPATH."/wp-content/themes/construction-child/plugin/Customer_Walker_Nav_Menu.php");
 include_once (ABSPATH."/wp-content/themes/construction-child/plugin/Short_Code.php");

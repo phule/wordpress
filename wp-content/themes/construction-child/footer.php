@@ -8,9 +8,7 @@ $construction_footer_text = get_theme_mod('construction_footer_text');
 ?>
     <div id="siteFooter" class="site-footer">
         <?php 
-        if(is_home()):
-            echo do_shortcode(apply_filters("the_content", "[show_menu menu='footer-menu']"));
-        endif;
+        echo do_shortcode(apply_filters("the_content", "[show_menu menu='footer-menu']"));
         ?>
         <?php if(is_active_sidebar('construction-footer-1') || is_active_sidebar('construction-footer-2') || is_active_sidebar('construction-footer-3')){ ?>
         <div class="bottom-footer wow fadeInUp">
@@ -65,7 +63,9 @@ $construction_footer_text = get_theme_mod('construction_footer_text');
         </footer>
     </div>
 </div>
-
+<?php
+echo do_shortcode(apply_filters("the_content", "[get_footer_media]"));
+?>
 <div id="lightbox" class="lightbox"></div>
 <div id="loading" class="loading">
     <div class="loader">Loading...</div>

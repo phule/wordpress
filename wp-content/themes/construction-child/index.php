@@ -12,6 +12,12 @@
  * @package construction
  */
 
+$construction_facebook_link = get_theme_mod('construction_facebook_link');
+$construction_twitter_link = get_theme_mod('construction_twitter_link');
+$construction_youtube_link = get_theme_mod('construction_youtube_link');
+$construction_instagram_link = get_theme_mod('construction_instagram_link');
+$construction_googleplus_link = get_theme_mod('construction_googleplus_link');
+$construction_footer_text = get_theme_mod('construction_footer_text');
 get_header(); ?>
 <div id="content" class="site-content">
     <section id="siteBody" class="site-body">
@@ -31,10 +37,10 @@ get_header(); ?>
                 <div class="h2">We’ve been around since 2014.<br />We are a global team of passionate consultants and developers<br />who deliver result driven digital solutions.</div>
                 <div class="socials-section">
                     <ul class="t-nav socials-nav">
-                        <li class="facebook"><a target="_blank" title="FACEBOOK" href="#">FACEBOOK</a></li>
-                        <li class="twitter"><a target="_blank" title="TWITTER" href="#">TWITTER</a></li>
-                        <li class="google-plus"><a target="_blank" title="GOOGLE +" href="#">GOOGLE +</a></li>
-                        <li class="youtube"><a target="_blank" title="YOUTUBE" href="#">YOUTUBE</a></li>
+                        <li class="facebook"><a target="_blank" title="FACEBOOK" href="<?php if(!empty($construction_facebook_link)){ echo $construction_facebook_link;}else{ echo "#";}?>">FACEBOOK</a></li>
+                        <li class="twitter"><a target="_blank" title="TWITTER" href="<?php if(!empty($construction_twitter_link)){ echo $construction_twitter_link;}else{ echo "#";}?>">TWITTER</a></li>
+                        <li class="google-plus"><a target="_blank" title="GOOGLE +" href="<?php if(!empty($construction_googleplus_link)){ echo $construction_googleplus_link;}else{ echo "#";}?>">GOOGLE +</a></li>
+                        <li class="youtube"><a target="_blank" title="YOUTUBE" href="<?php if(!empty($construction_youtube_link)){ echo $construction_youtube_link;}else{ echo "#";}?>">YOUTUBE</a></li>
                     </ul>
                 </div>
             </div>
@@ -61,13 +67,7 @@ get_header(); ?>
         </section>
         <?php
         echo do_shortcode(apply_filters("the_content", "[get_our_games]"));
-        ?>
-        <section id="contactSection" class="contact">
-            <?php
-            echo do_shortcode(apply_filters("the_content", "[contact-form-7 id='4' title='Contact form']"));
-            ?>
-        </section>
-        <?php
+        echo do_shortcode(apply_filters("the_content", "[contact-form-7 id='4' title='Contact form']"));
         else :?>
         <div class="t-container">
             <div class="ak-container">
