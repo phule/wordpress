@@ -224,7 +224,7 @@ function get_list_media($args) {
     $return .= '<ul class="list">';
     $image_default = get_template_directory_uri()."/content/images/ui/pages/games/default.png";
     foreach($arr as $key=>$item){
-        $return .='<li class="'.$item['type'].'">'
+        $return .='<li data-index="'.$key.'" class="'.$item['type'].'">'
             . '<span class="frame" style="background-image: url('.$item['path'].');">'
             . '<a title="" href="#"><img alt="" src="'.$image_default.'" /></a>'
             . '</span></li>';

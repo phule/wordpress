@@ -1,6 +1,6 @@
 'use strict';
 (function($, window, document, undefined) {
-    function shadowboxOwl(name) {
+    function shadowboxOwl(name,start) {
         var $section = $('.' + name);
         var $imgDefault = $('#' + name + 'Default');
         var $bannerItem = $section.find('div[class*="item"]');
@@ -20,7 +20,7 @@
             center: true,
             nav: true
         });
-
+        $owl.trigger('to.owl.carousel', start);
         monitorResize(function () {
             $bannerItem.css({ 'height': $imgDefault.height() });
 
@@ -37,7 +37,8 @@
         $section.find('.list li').on('click', function () {
             if (!shadowboxOpen) {
                 $shadowbox.addClass('opening');
-                shadowboxOwl('shadowbox');
+                var index = $(this).data('index');
+                shadowboxOwl('shadowbox',index);
                 setTimeout(function () {
                     $shadowbox.removeClass('opening').addClass('open');
                     shadowboxOpen = true;
