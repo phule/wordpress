@@ -3,6 +3,7 @@
     function bannerBG() {
         var $banner = $('#banner');
         var $bannerBG = $('#bannerBG');
+        var src_path = $('#bannerBG').data('src');
         var siteHeader = $('#siteHeader').height();
         var banner = getWindowHeight() - siteHeader;
         $banner.css({ 'height': banner });
@@ -10,7 +11,7 @@
             $bannerBG.css({ 'height': getWindowHeight() });
         }
         $bannerBG.fadeIn(3000, function () {
-            $bannerBG.css({ 'background-image': 'url(content/images/upload/banner/Hong_Kong.jpg)' });
+            $bannerBG.css({ 'background-image': 'url('+src_path+')' });
         });
     }
 

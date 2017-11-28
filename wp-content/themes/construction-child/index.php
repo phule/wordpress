@@ -25,7 +25,7 @@ get_header(); ?>
         if(is_home()):
         ?>
         <section id="banner" class="banner"></section>
-        <div id="bannerBG" class="banner-bg" data-src="<?php echo get_stylesheet_directory_uri(); ?>">
+        <div id="bannerBG" class="banner-bg" data-src="<?php echo get_stylesheet_directory_uri(); ?>/content/images/upload/banner/Hong_Kong.jpg">
             <video loop muted autoplay poster="<?php echo get_stylesheet_directory_uri(); ?>/content/images/upload/banner/Hong_Kong.jpg">
                 <source src="<?php echo get_stylesheet_directory_uri(); ?>/content/images/upload/banner/Hong_Kong.mp4" type="video/mp4">
             </video>
