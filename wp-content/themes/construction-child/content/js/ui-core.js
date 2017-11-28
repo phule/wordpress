@@ -55,12 +55,14 @@ var isView = {
 
 function monitorResize(callbackfnc) {
     callbackfnc.sw = getWindowWidth();
-    var $window = jQuery(window);
-    $window.on('resize', function () {
-        var nw = getWindowWidth();
-        if (nw !== callbackfnc.sw) {
-            callbackfnc.sw = nw;
-            callbackfnc();
-        }
-    });
+    (function($, window, document, undefined) {
+        var $window = $(window);
+        $window.on('resize', function () {
+            var nw = getWindowWidth();
+            if (nw !== callbackfnc.sw) {
+                callbackfnc.sw = nw;
+                callbackfnc();
+            }
+        });
+    })(window.jQuery, window, document);
 };

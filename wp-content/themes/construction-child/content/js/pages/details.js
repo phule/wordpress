@@ -36,12 +36,8 @@
 
         $section.find('.list li').on('click', function () {
             if (!shadowboxOpen) {
-                var index = $(this).data('index');
                 $shadowbox.addClass('opening');
                 shadowboxOwl('shadowbox');
-                if(typeof(index)!='undefined'){
-                    $('#shadowboxOwl').trigger('to.owl.carousel', index);
-                }
                 setTimeout(function () {
                     $shadowbox.removeClass('opening').addClass('open');
                     shadowboxOpen = true;

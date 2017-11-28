@@ -1,5 +1,4 @@
 'use strict';
-
 var isMobile = {
     Android: function Android() {
         return navigator.userAgent.match(/Android/i);
@@ -51,23 +50,27 @@ var isView = {
 
 function monitorResize(callbackfnc) {
     callbackfnc.sw = getWindowWidth();
-    var $window = $(window);
-    $window.on('resize', function () {
-        var nw = getWindowWidth();
-        if (nw !== callbackfnc.sw) {
-            callbackfnc.sw = nw;
-            callbackfnc();
-        }
-    });
+    (function($, window, document, undefined) {
+        var $window = $(window);
+        $window.on('resize', function () {
+            var nw = getWindowWidth();
+            if (nw !== callbackfnc.sw) {
+                callbackfnc.sw = nw;
+                callbackfnc();
+            }
+        });
+    })(window.jQuery, window, document);
 };
 (function($, window, document, undefined) {
     $(document).ready(function () {
 
         monitorResize(function () {
+            //alert('asassss');
         });
 
         setTimeout(function () {
             monitorResize(function () {
+                //alert('111');
             });
         }, 2000);
     });

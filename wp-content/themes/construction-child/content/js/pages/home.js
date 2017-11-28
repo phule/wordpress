@@ -9,10 +9,8 @@
         if (isMobile.any() && isView.mobile()) {
             $bannerBG.css({ 'height': getWindowHeight() });
         }
-        var url_src = $('#bannerBG').data('src');
-        url_src +='/content/images/upload/banner/Hong_Kong.jpg';
         $bannerBG.fadeIn(3000, function () {
-            $bannerBG.css({ 'background-image': 'url('+url_src+')' });
+            $bannerBG.css({ 'background-image': 'url(content/images/upload/banner/Hong_Kong.jpg)' });
         });
     }
 

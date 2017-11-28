@@ -3,19 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/functions.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/content/js/pages/details.js</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction/index.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/index.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/page.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction/inc/extras.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/header.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-config.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/twentyfifteen/functions.php</file>
+            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/template-parts/content-page.php</file>
+            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/template-parts/content-search.php</file>
             <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/plugin/Short_Code.php</file>
             <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/single-game.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/template-parts/content-detail.php</file>
-            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/footer.php</file>
+            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/page.php</file>
+            <file>file:/D:/xampp/htdocs/wordpress/wp-content/themes/construction-child/games_page.php</file>
         </group>
     </open-files>
 </project-private>

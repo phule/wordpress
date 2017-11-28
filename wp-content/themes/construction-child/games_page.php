@@ -61,7 +61,11 @@ while ($wp_query->have_posts()) {
     }           
 ?>
     <li>
-        <span class="frame"><a title="" href="<?php the_permalink(); ?>"><img alt="<?php echo $name;?>" src="<?php echo $image;?>" /></a></span>
+        <span class="frame" style="background-image: url(<?php echo $image;?>);">
+            <a title="" href="<?php the_permalink(); ?>">
+                <img alt="<?php echo $name;?>" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/games/default.png" />
+            </a>
+        </span>
         <h5><a title="" href="<?php the_permalink(); ?>"><?php echo $name;?></a></h5>
         <dl class="platform">
             <dt>Platform :</dt>

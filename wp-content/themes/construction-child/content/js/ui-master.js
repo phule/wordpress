@@ -8,10 +8,6 @@
 
         $hambeger.on('click', function () {
             if (!sidebarOpen) {
-                //if(!isMobile.any()){
-                //var scrollW = getWindowWidth() - $(window).width();
-                //$('.site-header .fixed').css({'right': scrollW});
-                //}
                 $html.addClass('sidebar-open');
                 sidebarOpen = true;
             }
@@ -70,7 +66,7 @@
             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                 shrinkOn = 87,
                 $header = $('#siteHeader');
-            if (distanceY > shrinkOn) {
+            if (distanceY >= shrinkOn) {
                 $header.addClass("smaller");
             } else {
                 if ($header.hasClass("smaller")) {

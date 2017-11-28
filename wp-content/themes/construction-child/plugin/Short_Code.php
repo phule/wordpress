@@ -93,7 +93,11 @@ function get_our_games($args) {
                         $platform = $field['value'];
                     }
                 }?>
-                <span class="frame"><a title="" href="<?php the_permalink(); ?>"><img alt="<?php echo $name;?>" src="<?php echo $image;?>" /></a></span>
+                <span class="frame" style="background-image: url(<?php echo $image;?>);">
+                    <a title="" href="<?php the_permalink(); ?>">
+                        <img alt="<?php echo $name;?>" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/games/default.png" />
+                    </a>
+                </span>
                     <h5><a title="" href="<?php the_permalink(); ?>"><?php echo $name;?></a></h5>
                     <dl class="platform">
                         <dt>Platform :</dt>
@@ -218,8 +222,12 @@ function get_list_media($args) {
     $return .= '<div class="t-container">';
     $return .= '<h4>MEDIA</h4>';
     $return .= '<ul class="list">';
+    $image_default = get_template_directory_uri()."/content/images/ui/pages/games/default.png";
     foreach($arr as $key=>$item){
-        $return .='<li data-index="'.$key.'" class="'.$item['type'].'"><span class="frame"><a title="" href="#"><img alt="" src="'.$item['path'].'" /></a></span></li>';
+        $return .='<li class="'.$item['type'].'">'
+            . '<span class="frame" style="background-image: url('.$item['path'].');">'
+            . '<a title="" href="#"><img alt="" src="'.$image_default.'" /></a>'
+            . '</span></li>';
     }
     $return .= '</ul>';
     $return .= '</div>';
@@ -272,7 +280,7 @@ function get_footer_media($args) {
         }
 
     }
-    
+    $image_default = get_template_directory_uri()."/content/images/ui/pages/games/default.png";
     $return='<div id="mediaShadowbox" class="shadowbox">';
     $return.='<section>';
     $return.='<div class="sliders">';
@@ -283,7 +291,7 @@ function get_footer_media($args) {
     $return.='<div id="shadowboxOwl" class="owl-carousel owl-theme">';
     foreach($arr as $item){
         if($item['type']=='photo'){
-            $return.='<div class="item"><a href="#" style="background-image: url('.$item['path'].');"><img alt="" src="'.$item['path'].'" /></a></div>';
+            $return.='<div class="item"><a href="#" style="background-image: url('.$item['path'].');"><img alt="" src="'.$image_default.'" /></a></div>';
         }
         if($item['type']=='video'){
             $return.='<div class="item-video"><a class="owl-video" href="'.$item['video'].'"></a></div>';

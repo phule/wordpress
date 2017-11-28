@@ -600,7 +600,7 @@ dl {
 .sidebar {
   display: none; }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .sidebar {
     display: block;
     background: rgba(255, 255, 255, 0.5);
@@ -639,9 +639,15 @@ dl {
     margin-left: 15px;
     width: 80px;
     height: 43px;
-    background: url(../images/ui/master/header/logo-mobile.png) center center no-repeat;
+    background: center center no-repeat;
     background-size: 80px auto;
-    overflow: hidden; }
+    overflow: hidden;
+    background-image: url("../images/ui/master/header/logo-mobile.png"); } }
+  @media only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.25), only screen and (max-width: 767px) and (min--moz-device-pixel-ratio: 1.25), only screen and (max-width: 767px) and (min-device-pixel-ratio: 1.25), only screen and (max-width: 767px) and (min-resolution: 120dpi), only screen and (max-width: 767px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 767px) and (min-resolution: 2dppx) {
+    .sidebar nav dt .logo {
+      background-image: url("../images/ui/master/header/logo-mobile@3x.png"); } }
+
+@media only screen and (max-width: 767px) {
   .sidebar nav dt .avatar {
     display: block;
     float: right;
@@ -717,11 +723,15 @@ dl {
   float: left;
   width: 268px;
   height: 43px;
-  background: url(../images/ui/master/header/logo.png) center center no-repeat;
+  background: center center no-repeat;
   background-size: 268px auto;
   overflow: hidden;
   -webkit-transition: all 0.3s linear 0s;
-  transition: all 0.3s linear 0s; }
+  transition: all 0.3s linear 0s;
+  background-image: url("../images/ui/master/header/logo.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .site-header .logo {
+      background-image: url("../images/ui/master/header/logo@3x.png"); } }
 
 .site-header .main-nav {
   float: right; }
@@ -777,13 +787,18 @@ dl {
 @media (max-width: 1159px) {
   .site-header .logo {
     width: 80px;
-    background-image: url(../images/ui/master/header/logo-mobile.png);
-    background-size: 80px auto; }
+    background-size: 80px auto;
+    background-image: url("../images/ui/master/header/logo-mobile.png"); } }
+  @media only screen and (max-width: 1159px) and (-webkit-min-device-pixel-ratio: 1.25), only screen and (max-width: 1159px) and (min--moz-device-pixel-ratio: 1.25), only screen and (max-width: 1159px) and (min-device-pixel-ratio: 1.25), only screen and (max-width: 1159px) and (min-resolution: 120dpi), only screen and (max-width: 1159px) and (-webkit-min-device-pixel-ratio: 2), only screen and (max-width: 1159px) and (min-resolution: 2dppx) {
+    .site-header .logo {
+      background-image: url("../images/ui/master/header/logo-mobile@3x.png"); } }
+
+@media (max-width: 1159px) {
   .site-header.smaller .logo {
     width: 74px;
     background-size: 74px auto; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .site-header .hambeger,
   .site-header .hambeger:hover,
   .site-header .hambeger:focus,
@@ -821,14 +836,6 @@ dl {
     margin-top: 4px; }
   .site-header .main-nav {
     display: none; } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .site-header .logo {
-    background-image: url(../images/ui/master/header/logo-mobile@3x.png); } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 1200px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 1200px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 1200px), only screen and (min-resolution: 120dpi) and (min-width: 1200px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1200px), only screen and (min-resolution: 2dppx) and (min-width: 1200px) {
-  .site-header .logo {
-    background-image: url(../images/ui/master/header/logo@3x.png); } }
 
 .site-footer .t-container {
   width: inherit; }
@@ -930,8 +937,12 @@ dl {
   display: block;
   width: 22px;
   height: 22px;
-  background: url(../images/ui/master/footer/socials.png) center center no-repeat;
-  background-size: 22px auto; }
+  background: center center no-repeat;
+  background-size: 22px auto;
+  background-image: url("../images/ui/master/footer/socials.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .site-footer footer nav .socials-nav li a {
+      background-image: url("../images/ui/master/footer/socials@3x.png"); } }
 
 .site-footer footer nav .socials-nav li.facebook a {
   background-position: center 0; }
@@ -955,7 +966,7 @@ dl {
   .site-footer footer nav .socials-nav li {
     padding-left: 30px; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .site-footer header li {
     width: 100%;
     float: none;
@@ -980,10 +991,6 @@ dl {
     display: block; }
   .site-footer footer nav .socials-nav {
     margin-left: 0; } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .site-footer footer nav .socials-nav li a {
-    background-image: url(../images/ui/master/footer/socials@3x.png); } }
 
 .home-page section.banner {
   height: 720px; }
@@ -1022,7 +1029,7 @@ dl {
     transform: translateX(-50%);
     left: 50%; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .home-page .banner-bg video {
     display: none; } }
 
@@ -1075,9 +1082,13 @@ dl {
   content: '';
   display: block;
   height: 96px;
-  background: url(../images/ui/pages/home/about/socials.png) no-repeat;
+  background: no-repeat;
   background-size: 96px auto;
-  margin-bottom: 13px; }
+  margin-bottom: 13px;
+  background-image: url("../images/ui/pages/home/about/socials.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .home-page section.about .socials-nav li a:before {
+      background-image: url("../images/ui/pages/home/about/socials@3x.png"); } }
 
 .home-page section.about .socials-nav li.facebook a:before {
   background-position: center 0; }
@@ -1091,7 +1102,7 @@ dl {
 .home-page section.about .socials-nav li.youtube a:before {
   background-position: center -288px; }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .home-page section.about {
     padding-top: 35px; }
   .home-page section.about h4 {
@@ -1108,10 +1119,6 @@ dl {
   .home-page section.about .socials-nav li:nth-child(1),
   .home-page section.about .socials-nav li:nth-child(2) {
     margin-bottom: 0; } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .home-page section.about .socials-nav li a:before {
-    background-image: url(../images/ui/pages/home/about/socials@3x.png); } }
 
 .home-page section.partner {
   text-align: center;
@@ -1159,9 +1166,13 @@ dl {
   bottom: 0;
   font-size: 0;
   color: transparent;
-  background: url(../images/ui/pages/home/partner/arrow.png) no-repeat;
+  background: no-repeat;
   background-size: auto 68px;
-  pointer-events: auto; }
+  pointer-events: auto;
+  background-image: url("../images/ui/pages/home/partner/arrow.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .home-page section.partner .owl-carousel .owl-nav div {
+      background-image: url("../images/ui/pages/home/partner/arrow@3x.png"); } }
 
 .home-page section.partner .owl-carousel .owl-nav .owl-prev {
   left: -72px;
@@ -1183,7 +1194,7 @@ dl {
   .home-page section.partner .owl-carousel .owl-nav .owl-next {
     right: 0; } }
 
-@media (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .home-page section.partner .owl-carousel {
     padding-left: 55px;
     padding-right: 55px; }
@@ -1191,7 +1202,7 @@ dl {
     width: 35px;
     background-size: auto 51px; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .home-page section.partner {
     padding-top: 14px;
     padding-bottom: 35px; }
@@ -1204,16 +1215,16 @@ dl {
     width: 23px;
     background-size: auto 34px; } }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .home-page section.partner .owl-carousel .owl-nav div {
-    background-image: url(../images/ui/pages/home/partner/arrow@3x.png); } }
-
 .home-page section.mission {
-  background: url(../images/ui/pages/home/mission/bg.png) center center no-repeat;
+  background: center center no-repeat;
   background-size: cover;
   text-align: center;
   padding-top: 70px;
-  padding-bottom: 70px; }
+  padding-bottom: 70px;
+  background-image: url("../images/ui/pages/home/mission/bg.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .home-page section.mission {
+      background-image: url("../images/ui/pages/home/mission/bg@3x.png"); } }
 
 .home-page section.mission .h2 {
   font-size: 1.875em;
@@ -1222,7 +1233,7 @@ dl {
   font-weight: normal;
   font-family: "HelveticaNeue-Bold", sans-serif; }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .home-page section.mission {
     padding-top: 35px;
     padding-bottom: 35px; }
@@ -1230,13 +1241,10 @@ dl {
     font-size: 1.25em;
     line-height: 26px; } }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .home-page section.mission {
-    background-image: url(../images/ui/pages/home/mission/bg@3x.png); } }
-
 .home-page section.games {
-  /*background: url(../images/ui/pages/home/games/bg.png) center top;
-    background-size: 1600px auto;*/
+  /*background: center top;
+    background-size: 1600px auto;
+    @include retina3('../images/ui/pages/home/games/bg', 'png');*/
   padding-top: 70px;
   padding-bottom: 24px;
   background: #fff; }
@@ -1274,9 +1282,9 @@ dl {
   display: none; }
 
 .home-page section.games .list li .frame {
-  /*display: block;
-    background: center center no-repeat;
-    background-size: cover;*/
+  display: block;
+  background: center center no-repeat;
+  background-size: cover;
   margin-bottom: 4px; }
 
 .home-page section.games .list li .frame a {
@@ -1343,7 +1351,7 @@ dl {
   .home-page section.games .list li.clear.four {
     display: block; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .home-page section.games {
     padding-top: 35px;
     padding-bottom: 13px; }
@@ -1354,17 +1362,6 @@ dl {
     width: 100%;
     margin-bottom: 23px; } }
 
-/*@media
-only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:320px),
-only screen and (        min-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (              min-resolution:120dpi)      and (min-width:320px),
-only screen and (               min-resolution:2dppx)      and (min-width:320px){
-    .home-page section.games{
-        background-image: url(../images/ui/pages/home/games/bg@3x.png);
-    }
-}*/
 .home-page section.contact {
   padding-top: 70px;
   padding-bottom: 22px;
@@ -1394,10 +1391,10 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 38px; }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .home-page section.contact .form .col {
       width: 55%; } }
-  @media (min-width: 768px) {
+  @media only screen and (min-width: 768px) {
     .home-page section.contact .form .col + .col {
       width: 45%; } }
 
@@ -1469,8 +1466,12 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   display: block;
   width: 22px;
   height: 22px;
-  background: url(../images/ui/pages/home/contact/socials.png) center center no-repeat;
-  background-size: 22px auto; }
+  background: center center no-repeat;
+  background-size: 22px auto;
+  background-image: url("../images/ui/pages/home/contact/socials.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .home-page section.contact dd .socials li a {
+      background-image: url("../images/ui/pages/home/contact/socials@3x.png"); } }
 
 .home-page section.contact dd .socials li.facebook a {
   background-position: center 0; }
@@ -1497,7 +1498,7 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
     padding-left: 15px;
     padding-right: 15px; } }
 
-@media (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .home-page section.contact .form .col footer {
     text-align: center; }
   .home-page section.contact .form .col footer .captcha {
@@ -1508,7 +1509,7 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
     .home-page section.contact .form .col footer .captcha > div {
       display: inline-block; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .home-page section.contact {
     padding-top: 35px;
     padding-bottom: 16px; }
@@ -1536,10 +1537,6 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
     padding-right: 20px;
     padding-top: 4px; } }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .home-page section.contact dd .socials li a {
-    background-image: url(../images/ui/pages/home/contact/socials@3x.png); } }
-
 .games-page .search {
   margin: 0 -10px;
   padding: 0;
@@ -1549,65 +1546,97 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
     display: table; }
   .games-page .search:after {
     clear: both; }
-
-.games-page .search li {
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 15px;
-  background: #fff; }
-
-.games-page .search li.category {
-  width: 22.4%; }
-
-.games-page .search li.platform {
-  width: 22.5%; }
-
-.games-page .search li.genre {
-  width: 22.3%; }
-
-.games-page .search li.keyword {
-  width: 32.8%;
-  position: relative; }
-
-.games-page .search li.keyword:after {
-  content: '';
-  display: block;
-  width: 47px;
-  height: 47px;
-  background: url(../images/ui/pages/games/icons.png) center bottom no-repeat;
-  background-size: 47px auto;
-  position: absolute;
-  top: 0;
-  right: 12px;
-  pointer-events: none; }
-
-.games-page .search li.keyword .input {
-  padding-right: 51px; }
-
-.games-page .search li .input {
-  background: transparent;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  height: 47px;
-  border: 1px solid #16181a;
-  padding: 0 12px;
-  font-size: 1.875em;
-  width: 100%; }
-
-@media (max-width: 767px) {
-  .games-page .search li.category,
-  .games-page .search li.platform,
-  .games-page .search li.genre,
-  .games-page .search li.keyword {
-    width: 100%; }
-  .games-page .search li .input {
-    font-size: 1.25em; } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .games-page .search li.keyword:after {
-    background-image: url(../images/ui/pages/games/icons@3x.png); } }
+  .games-page .search li {
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+    background: #fff; }
+    .games-page .search li.category {
+      width: 22.4%; }
+      @media only screen and (max-width: 979px) {
+        .games-page .search li.category {
+          width: 50%; } }
+      @media only screen and (max-width: 767px) {
+        .games-page .search li.category {
+          width: 100%; } }
+    .games-page .search li.platform {
+      width: 22.5%; }
+      @media only screen and (max-width: 979px) {
+        .games-page .search li.platform {
+          width: 50%; } }
+      @media only screen and (max-width: 767px) {
+        .games-page .search li.platform {
+          width: 100%; } }
+    .games-page .search li.genre {
+      width: 22.3%; }
+      @media only screen and (max-width: 979px) {
+        .games-page .search li.genre {
+          width: 50%; } }
+      @media only screen and (max-width: 767px) {
+        .games-page .search li.genre {
+          width: 100%; } }
+    .games-page .search li.keyword {
+      width: 32.8%;
+      position: relative; }
+      @media only screen and (max-width: 979px) {
+        .games-page .search li.keyword {
+          width: 50%; } }
+      @media only screen and (max-width: 767px) {
+        .games-page .search li.keyword {
+          width: 100%; } }
+      .games-page .search li.keyword:after {
+        content: '';
+        display: block;
+        width: 47px;
+        height: 47px;
+        background: center bottom no-repeat;
+        background-size: 47px auto;
+        position: absolute;
+        top: 0;
+        right: 12px;
+        pointer-events: none;
+        background-image: url("../images/ui/pages/games/icons.png"); }
+        @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+          .games-page .search li.keyword:after {
+            background-image: url("../images/ui/pages/games/icons@3x.png"); } }
+      .games-page .search li.keyword .input {
+        padding-right: 51px; }
+    .games-page .search li .input {
+      background: transparent;
+      float: left;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 47px;
+      border: 1px solid #16181a;
+      padding: 0 12px;
+      font-size: 1.875em;
+      width: 100%; }
+      @media only screen and (max-width: 767px) {
+        .games-page .search li .input {
+          font-size: 1.25em; } }
+    .games-page .search li .select2-container {
+      float: left;
+      width: 100% !important; }
+      .games-page .search li .select2-container.select2-container--open .select2-selection__arrow b {
+        border-width: 0 8px 10px 8px;
+        border-color: transparent transparent #16181a transparent; }
+    .games-page .search li .select2-selection {
+      border: 1px solid #16181a;
+      height: 47px;
+      border-radius: 0; }
+    .games-page .search li .select2-selection__rendered {
+      line-height: 47px;
+      padding: 0 36px 0 12px;
+      font-size: 1.875em; }
+    .games-page .search li .select2-selection__arrow {
+      height: 100%;
+      width: 36px; }
+      .games-page .search li .select2-selection__arrow b {
+        border-width: 10px 8px 0 8px;
+        border-color: #16181a transparent transparent;
+        margin-left: -8px;
+        margin-top: -5px; }
 
 .games-page .sort {
   margin: 0 -10px;
@@ -1635,15 +1664,16 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   color: #8e8f90;
   text-decoration: none; }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .games-page .sort {
     padding: 10px 0 13px; }
   .games-page .sort li {
     font-size: 1.25em; } }
 
 .games-page section.games {
-  /*background: url(../images/ui/pages/home/games/bg.png) center top;
-    background-size: 1600px auto;*/
+  /*background: center top;
+    background-size: 1600px auto;
+    @include retina3('../images/ui/pages/home/games/bg', 'png');*/
   padding-top: 70px;
   padding-bottom: 70px; }
 
@@ -1730,7 +1760,11 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   border: 1px solid #16181a;
   height: 47px;
   width: 142px;
-  background: #fff; }
+  background: #fff;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 47px;
+  color: #16181a; }
 
 .games-page section.games .list li dl.platform dt {
   margin-bottom: 5px; }
@@ -1755,7 +1789,7 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   .games-page section.games .list li.clear.four {
     display: block; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .games-page section.games {
     padding-top: 35px;
     padding-bottom: 35px; }
@@ -1768,22 +1802,12 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   .games-page section.games footer {
     padding-top: 19px; } }
 
-/*@media
-only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:320px),
-only screen and (        min-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (              min-resolution:120dpi)      and (min-width:320px),
-only screen and (               min-resolution:2dppx)      and (min-width:320px){
-    .games-page section.games{
-        background-image: url(../images/ui/pages/home/games/bg@3x.png);
-    }
-}*/
 .details-page section.info {
   padding-top: 70px;
   padding-bottom: 70px;
-  /*background: url(../images/ui/pages/info/bg.png) center top;
-    background-size: 789px auto;*/ }
+  /*background: center top;
+    background-size: 789px auto;
+    @include retina3('../images/ui/pages/info/bg', 'png');*/ }
 
 .details-page section.info h4 {
   font-size: 1.5em;
@@ -1859,7 +1883,7 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   margin-top: 0;
   margin-bottom: 20px; }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .details-page section.info {
     padding-top: 35px;
     padding-bottom: 35px; }
@@ -1889,17 +1913,6 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   .details-page section.info p {
     margin-bottom: 15px; } }
 
-/*@media
-only screen and (-webkit-min-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (   min--moz-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (     -o-min-device-pixel-ratio:1.25/1)    and (min-width:320px),
-only screen and (        min-device-pixel-ratio:1.25)      and (min-width:320px),
-only screen and (              min-resolution:120dpi)      and (min-width:320px),
-only screen and (               min-resolution:2dppx)      and (min-width:320px){
-    .details-page section.info{
-        background-image: url(../images/ui/pages/info/bg@3x.png);
-    }
-}*/
 .details-page section.media {
   background: #ebebeb;
   padding-top: 63px;
@@ -1935,8 +1948,8 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
 
 .details-page section.media .list li .frame {
   display: block;
-  /*background: center center no-repeat;
-    background-size: cover;*/
+  background: center center no-repeat;
+  background-size: cover;
   position: relative; }
 
 .details-page section.media .list li .frame img {
@@ -1956,13 +1969,17 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   content: '';
   width: 52px;
   height: 52px;
-  background: url(../images/ui/pages/games/icons.png) center center no-repeat;
+  background: center center no-repeat;
   background-size: 52px auto;
   position: absolute;
   top: 50%;
   left: 50%;
   margin-top: -26px;
-  margin-left: -26px; }
+  margin-left: -26px;
+  background-image: url("../images/ui/pages/games/icons.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .details-page section.media .list li:hover .frame:after {
+      background-image: url("../images/ui/pages/games/icons@3x.png"); } }
 
 .details-page section.media .list li.video:hover .frame:after {
   background-position: center 0; }
@@ -1977,7 +1994,7 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   .details-page section.media .list li {
     width: 25%; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .details-page section.media {
     padding-top: 35px;
     padding-bottom: 20px; }
@@ -1987,10 +2004,6 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
     float: none;
     width: 100%;
     margin-bottom: 15px; } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .details-page section.media .list li:hover .frame:after {
-    background-image: url(../images/ui/pages/games/icons@3x.png); } }
 
 .shadowbox {
   position: fixed;
@@ -2037,11 +2050,15 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   width: 59px;
   height: 50px;
   border: 0 none;
-  background: #fff url(../images/ui/pages/info/shadowbox/close.png) center center no-repeat;
+  background: #fff center center no-repeat;
   background-size: 35px auto;
   position: absolute;
   top: 0;
-  left: calc(100% + 1px); }
+  left: calc(100% + 1px);
+  background-image: url("../images/ui/pages/info/shadowbox/close.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .shadowbox .sliders .close {
+      background-image: url("../images/ui/pages/info/shadowbox/close@3x.png"); } }
 
 .shadowbox .default {
   height: 0;
@@ -2068,8 +2085,12 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   color: transparent;
   width: 63px;
   height: 63px;
-  background: url(../images/ui/pages/info/shadowbox/arrow.png) no-repeat;
-  background-size: 63px auto; }
+  background: no-repeat;
+  background-size: 63px auto;
+  background-image: url("../images/ui/pages/info/shadowbox/arrow.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .shadowbox .owl-carousel .owl-nav div {
+      background-image: url("../images/ui/pages/info/shadowbox/arrow@3x.png"); } }
 
 .shadowbox .owl-carousel .owl-nav div.owl-prev {
   left: -13.5%;
@@ -2092,8 +2113,12 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   margin: 0 auto;
   width: 25px;
   height: 25px;
-  background: url(../images/ui/pages/info/shadowbox/socials.png) center center no-repeat;
-  background-size: 25px auto; }
+  background: center center no-repeat;
+  background-size: 25px auto;
+  background-image: url("../images/ui/pages/info/shadowbox/socials.png"); }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+    .shadowbox .socials-nav li a {
+      background-image: url("../images/ui/pages/info/shadowbox/socials@3x.png"); } }
 
 .shadowbox .socials-nav li.facebook a {
   background-position: center 0; }
@@ -2114,7 +2139,7 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   .shadowbox .sliders {
     width: 80%; } }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .shadowbox .sliders .close {
     width: 29px;
     height: 25px;
@@ -2132,12 +2157,6 @@ only screen and (               min-resolution:2dppx)      and (min-width:320px)
   .shadowbox .owl-carousel .owl-nav div.owl-next {
     right: -31px; } }
 
-@media (max-width: 374px) {
+@media only screen and (max-width: 359px) {
   .shadowbox .socials-nav {
     width: 100%; } }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min--moz-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-device-pixel-ratio: 1.25) and (min-width: 320px), only screen and (min-resolution: 120dpi) and (min-width: 320px), only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px), only screen and (min-resolution: 2dppx) and (min-width: 320px) {
-  .shadowbox .owl-carousel .owl-nav div {
-    background-image: url(../images/ui/pages/info/shadowbox/arrow@3x.png); }
-  .shadowbox .socials-nav li a {
-    background-image: url(../images/ui/pages/info/shadowbox/socials@3x.png); } }
