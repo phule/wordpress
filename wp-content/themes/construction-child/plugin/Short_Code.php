@@ -252,6 +252,11 @@ function get_footer_media($args) {
             the_row();
             $image_title = get_sub_field('title');
             $image_path = get_sub_field('video_path');
+            $facebook = get_sub_field('facebook');
+            $twitter = get_sub_field('twitter');
+            $instagram = get_sub_field('instagram');
+            $youtube = get_sub_field('youtube');
+            $google_plus = get_sub_field('google_plus');
             if(!empty($image_path)){
                 $youtube_id = getYouTubeId($image_path); 
                 if(!empty($youtube_id)){
@@ -259,6 +264,11 @@ function get_footer_media($args) {
                     $tmp['type'] = 'video';
                     $tmp['path'] = 'http://img.youtube.com/vi/'.$youtube_id.'/mqdefault.jpg';
                     $tmp['video'] = $image_path;
+                    $tmp['facebook'] = $facebook;
+                    $tmp['twitter'] = $twitter;
+                    $tmp['instagram'] = $instagram;
+                    $tmp['youtube'] = $youtube;
+                    $tmp['google_plus'] = $google_plus;
                     $arr[] = $tmp;
                 }
             }
@@ -270,10 +280,20 @@ function get_footer_media($args) {
             the_row();
             $image_title = get_sub_field('title');
             $image_path = get_sub_field('image_path');
+            $facebook = get_sub_field('facebook');
+            $twitter = get_sub_field('twitter');
+            $instagram = get_sub_field('instagram');
+            $youtube = get_sub_field('youtube');
+            $google_plus = get_sub_field('google_plus');
             if(!empty($image_path)){
                 $tmp = [];
                 $tmp['type'] = 'photo';
                 $tmp['path'] = $image_path['url'];
+                $tmp['facebook'] = $facebook;
+                $tmp['twitter'] = $twitter;
+                $tmp['instagram'] = $instagram;
+                $tmp['youtube'] = $youtube;
+                $tmp['google_plus'] = $google_plus;
                 $arr[] = $tmp;
             }
             
@@ -300,11 +320,11 @@ function get_footer_media($args) {
     $return.='</div>';
     $return.='</div>';
     $return.='<ul class="t-nav socials-nav">';
-    $return.='<li class="facebook"><a target="_blank" title="Facebook" href="'.$construction_facebook_link.'"></a></li>';
-    $return.='<li class="twitter"><a target="_blank" title="Twitter" href="'.$construction_twitter_link.'"></a></li>';
-    $return.='<li class="instagram"><a target="_blank" title="Instagram" href="'.$construction_instagram_link.'"></a></li>';
-    $return.='<li class="youtube"><a target="_blank" title="Youtube" href="'.$construction_youtube_link.'"></a></li>';
-    $return.='<li class="google-plus"><a target="_blank" title="google +" href="'.$construction_googleplus_link.'"></a></li>';
+    $return.='<li class="facebook"><a target="_blank" title="Facebook" href="'.$item['facebook'].'"></a></li>';
+    $return.='<li class="twitter"><a target="_blank" title="Twitter" href="'.$item['twitter'].'"></a></li>';
+    $return.='<li class="instagram"><a target="_blank" title="Instagram" href="'.$item['instagram'].'"></a></li>';
+    $return.='<li class="youtube"><a target="_blank" title="Youtube" href="'.$item['youtube'].'"></a></li>';
+    $return.='<li class="google-plus"><a target="_blank" title="google +" href="'.$item['google_plus'].'"></a></li>';
     $return.='</ul>';
     $return.='</section>';
     $return.='</div>';
