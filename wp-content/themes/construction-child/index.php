@@ -30,11 +30,11 @@ if(!empty($construction_our_mission)){
 $image_media_path = get_stylesheet_directory_uri()."/content/images/upload/banner/Hong_Kong.jpg";
 $video_media_path = get_stylesheet_directory_uri()."/content/images/upload/banner/Hong_Kong.mp4";
 if($construction_media_option=='video'){
-    $image_media_path = get_theme_mod('construction_media_image_mobile');
-    $video_media_path = get_theme_mod('construction_media_video');
+    $image_media_path = !empty(get_theme_mod('construction_media_image_mobile'))?get_theme_mod('construction_media_image_mobile'):$image_media_path;
+    $video_media_path = !empty(get_theme_mod('construction_media_video'))?get_theme_mod('construction_media_video'):$video_media_path;
 }
 if($construction_media_option=='image'){
-    $image_media_path = get_theme_mod('construction_media_image');
+    $image_media_path = !empty(get_theme_mod('construction_media_image')) ? get_theme_mod('construction_media_image') : $image_media_path;
 }
 get_header(); ?>
 <div id="content" class="site-content">
