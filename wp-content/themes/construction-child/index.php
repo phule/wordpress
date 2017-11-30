@@ -20,11 +20,21 @@ $construction_googleplus_link = get_theme_mod('construction_googleplus_link');
 $construction_footer_text = get_theme_mod('construction_footer_text');
 $construction_our_mission = get_theme_mod('construction_about_sub_title');
 $construction_about_title = get_theme_mod('construction_about_title');
+$construction_media_option = get_theme_mod('construction_media_option');
 if(!empty($construction_about_title)){
     $construction_about_title = nl2br($construction_about_title);
 }
 if(!empty($construction_our_mission)){
     $construction_our_mission = nl2br($construction_our_mission);
+}
+$image_media_path = get_stylesheet_directory_uri()."/content/images/upload/banner/Hong_Kong.jpg";
+$video_media_path = get_stylesheet_directory_uri()."/content/images/upload/banner/Hong_Kong.mp4";
+if($construction_media_option=='video'){
+    $image_media_path = get_theme_mod('construction_media_image_mobile');
+    $video_media_path = get_theme_mod('construction_media_video');
+}
+if($construction_media_option=='image'){
+    $image_media_path = get_theme_mod('construction_media_image');
 }
 get_header(); ?>
 <div id="content" class="site-content">
@@ -33,9 +43,13 @@ get_header(); ?>
         if(is_home()):
         ?>
         <section id="banner" class="banner"></section>
-        <div id="bannerBG" class="banner-bg" data-src="<?php echo get_stylesheet_directory_uri(); ?>/content/images/upload/banner/Hong_Kong.jpg">
-            <video loop muted autoplay poster="<?php echo get_stylesheet_directory_uri(); ?>/content/images/upload/banner/Hong_Kong.jpg">
-                <source src="<?php echo get_stylesheet_directory_uri(); ?>/content/images/upload/banner/Hong_Kong.mp4" type="video/mp4">
+        <div id="bannerBG" class="banner-bg" data-src="<?php echo $image_media_path; ?>">
+            <video loop muted autoplay poster="<?php echo $image_media_path; ?>">
+                <?php
+                if($construction_media_option=='video'){?>
+                <source src="<?php echo $video_media_path; ?>" type="video/mp4">
+                <?php 
+                }?>
             </video>
         </div>
         

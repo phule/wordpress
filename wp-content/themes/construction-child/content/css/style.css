@@ -739,6 +739,31 @@ dl {
 .site-header .main-nav li {
   padding-left: 35px; }
 
+.site-header .main-nav li.dropdown {
+  padding-left: 35px;
+  position: relative;
+  cursor: pointer; }
+
+.site-header .main-nav li.dropdown:hover .menu-dropdown,
+.site-header .main-nav li.dropdown a:active + .menu-dropdown {
+  display: block; }
+
+.site-header .main-nav li .menu-dropdown {
+  display: none;
+  position: absolute;
+  right: -15px;
+  top: 100%;
+  margin: 0;
+  padding: 24px 0 0;
+  list-style: none;
+  background-color: #16181a;
+  -webkit-transition: all 0.3s linear 0s;
+  transition: all 0.3s linear 0s; }
+
+.site-header .main-nav li .menu-dropdown li {
+  padding-left: 15px;
+  padding-right: 15px; }
+
 .site-header .main-nav a {
   display: inline-block;
   color: #fdfeff;
@@ -1284,7 +1309,8 @@ dl {
 .home-page section.games .list li h5 {
   font-size: 1.25em;
   font-weight: normal;
-  margin: 0 0 4px; }
+  margin: 0 0 4px;
+  text-align: left; }
 
 .home-page section.games .list li h5 a {
   text-decoration: none;
@@ -1696,7 +1722,8 @@ dl {
 .games-page section.games .list li h5 {
   font-size: 1.25em;
   font-weight: normal;
-  margin: 0 0 4px; }
+  margin: 0 0 4px;
+  text-align: left; }
 
 .games-page section.games .list li h5 a {
   text-decoration: none;

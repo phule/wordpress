@@ -165,6 +165,16 @@ $construction_fonts = construction_fonts();
     )
  );
  $wp_customize->add_section(
+    'construction_media_section',
+    array(
+        'title' => __('Media Section','construction'),
+        'priority' => 19,
+        'panel' => 'construction_home_panel',
+        'capability' => 'edit_theme_options',
+        'theme_support' => ''
+    )
+ );
+ $wp_customize->add_section(
     'construction_top_footer_section',
     array(
         'title' => __('Top Footer Section','construction'),
@@ -378,7 +388,7 @@ $construction_fonts = construction_fonts();
     'construction_about_title',
     array(
         'default' => '',
-        'sanitize_callback' => 'sanitize_text_field',
+        'sanitize_callback' => 'construction_sanitize_textarea',
         'transport'=>'postMessage',
     )
  );
@@ -396,7 +406,7 @@ $construction_fonts = construction_fonts();
     array(
         'default' => '',
         'transport'=>'postMessage',
-        'sanitize_callback' => 'sanitize_text_field'
+        'sanitize_callback' => 'construction_sanitize_textarea'
     )
  );
  $wp_customize->add_control(
@@ -1503,3 +1513,83 @@ $wp_customize->add_control(
         'section' => 'construction_skin_color_section'
     )
  );
+
+$wp_customize->add_setting(
+    'construction_media_option',
+    array(
+        'default' => 'image',
+        'transport'=>'postMessage',
+        'sanitize_callback'=>'sanitize_text_field'
+    )
+);
+$wp_customize->add_control(
+    'construction_media_option',
+    array(
+        'label' => __('Media option','construction'),
+        'priority' => 1,
+        'type' => 'radio',
+        'choices' => array(
+            'image' => __('Image','construction'),
+            'video' => __('Video','construction'),
+        ),
+        'section' => 'construction_media_section'
+    )
+ );
+$wp_customize->add_setting(
+    'construction_media_image',
+    array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    )
+ );
+ $wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'construction_media_image',
+           array(
+               'label'      => __( 'Media Image', 'construction' ),
+               'section'    => 'construction_media_section',
+               'settings'   => 'construction_media_image',
+               'priority' => 10,
+           )
+       )
+   );
+ 
+ $wp_customize->add_setting(
+    'construction_media_video',
+    array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    )
+ );
+ $wp_customize->add_control(
+       new WP_Customize_Upload_Control(
+           $wp_customize,
+           'construction_media_video',
+           array(
+               'label'      => __( 'Media Video', 'construction' ),
+               'section'    => 'construction_media_section',
+               'settings'   => 'construction_media_video',
+               'priority' => 10,
+           )
+       )
+   );
+  $wp_customize->add_setting(
+    'construction_media_image_mobile',
+    array(
+        'default' => '',
+        'sanitize_callback' => 'esc_url_raw'
+    )
+ );
+ $wp_customize->add_control(
+       new WP_Customize_Image_Control(
+           $wp_customize,
+           'construction_media_image_mobile',
+           array(
+               'label'      => __( 'Media Image Mobile', 'construction' ),
+               'section'    => 'construction_media_section',
+               'settings'   => 'construction_media_image_mobile',
+               'priority' => 10,
+           )
+       )
+   );
