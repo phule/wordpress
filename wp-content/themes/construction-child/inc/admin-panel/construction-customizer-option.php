@@ -386,7 +386,7 @@ $construction_fonts = construction_fonts();
     'construction_about_title',
     array(
         'label' => __('About Us Section Title','construction'),
-        'type' => 'text',
+        'type' => 'textarea',
         'priority' => 4,
         'section' => 'construction_about_section'
     )
@@ -402,8 +402,8 @@ $construction_fonts = construction_fonts();
  $wp_customize->add_control(
     'construction_about_sub_title',
     array(
-        'label' => __('About Us Section Sub Title','construction'),
-        'type' => 'text',
+        'label' => __('Our mission','construction'),
+        'type' => 'textarea',
         'priority' => 6,
         'section' => 'construction_about_section'
     )

@@ -306,7 +306,7 @@ function get_footer_media($args) {
     $return.='<div class="sliders">';
     $return.='<button class="close"></button>';
     $return.='<div class="default">';
-    $return.='<img id="shadowboxDefault" alt="" src="'.$arr[0]['path'].'" />';
+    $return.='<img id="shadowboxDefault" alt="" src="'.$image_default.'" />';
     $return.='</div>';
     $return.='<div id="shadowboxOwl" class="owl-carousel owl-theme">';
     foreach($arr as $item){

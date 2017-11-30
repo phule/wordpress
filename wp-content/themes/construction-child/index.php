@@ -18,6 +18,14 @@ $construction_youtube_link = get_theme_mod('construction_youtube_link');
 $construction_instagram_link = get_theme_mod('construction_instagram_link');
 $construction_googleplus_link = get_theme_mod('construction_googleplus_link');
 $construction_footer_text = get_theme_mod('construction_footer_text');
+$construction_our_mission = get_theme_mod('construction_about_sub_title');
+$construction_about_title = get_theme_mod('construction_about_title');
+if(!empty($construction_about_title)){
+    $construction_about_title = nl2br($construction_about_title);
+}
+if(!empty($construction_our_mission)){
+    $construction_our_mission = nl2br($construction_our_mission);
+}
 get_header(); ?>
 <div id="content" class="site-content">
     <section id="siteBody" class="site-body">
@@ -34,7 +42,7 @@ get_header(); ?>
         <section id="aboutSection" class="about">
             <div class="t-container">
                 <h4>ABOUT US</h4>
-                <div class="h2">We’ve been around since 2014.<br />We are a global team of passionate consultants and developers<br />who deliver result driven digital solutions.</div>
+                <div class="h2"><?php echo $construction_about_title;?></div>
                 <div class="socials-section">
                     <ul class="t-nav socials-nav">
                         <li class="facebook"><a target="_blank" title="FACEBOOK" href="<?php if(!empty($construction_facebook_link)){ echo $construction_facebook_link;}else{ echo "#";}?>">FACEBOOK</a></li>
@@ -62,7 +70,7 @@ get_header(); ?>
 
         <section id="missionSection" class="mission">
             <div class="t-container">
-                <div class="h2">Our mission is to deliver amazing results by<br />unlocking opportunities for our clients and our employees<br />simultaneously</div>
+                <div class="h2"><?php echo $construction_our_mission;?></div>
             </div>
         </section>
         <?php
