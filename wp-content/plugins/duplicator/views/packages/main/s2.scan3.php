@@ -1,4 +1,6 @@
 <?php
+	/*IDE Helper*/
+	/* @var $Package DUP_Package */
 	function _duplicatorGetRootPath() {
 		$txt   = __('Root Path', 'duplicator');
 		$root  = rtrim(DUPLICATOR_WPROOTPATH, '//');
@@ -17,19 +19,24 @@ ARCHIVE -->
 <div class="scan-header scan-item-first">
 	<i class="fa fa-files-o"></i>
 	<?php _e("Files", 'duplicator'); ?>
-	<i class="fa fa-question-circle data-size-help"
-		data-tooltip-title="<?php _e('Archive Size', 'duplicator'); ?>"
-		data-tooltip="<?php _e('This size includes only files BEFORE compression is applied. It does not include the size of the '
-					. 'database script or any applied filters.  Once complete the package size will be smaller than this number.', 'duplicator'); ?>"></i>
-	<div id="data-arc-size1"></div>
-	<div class="dup-scan-filter-status">
-		<?php
-			if ($Package->Archive->ExportOnlyDB) {
-				echo '<i class="fa fa-filter"></i> '; _e('Database Only', 'duplicator');
-			} elseif ($Package->Archive->FilterOn) {
-				echo '<i class="fa fa-filter"></i> '; _e('Enabled', 'duplicator');
-			}
-		?>
+	
+	<div class="scan-header-details">
+		<div class="dup-scan-filter-status">
+			<?php
+				if ($Package->Archive->ExportOnlyDB) {
+					echo '<i class="fa fa-filter"></i> '; _e('Database Only', 'duplicator');
+				} elseif ($Package->Archive->FilterOn) {
+					echo '<i class="fa fa-filter"></i> '; _e('Enabled', 'duplicator');
+				}
+			?>
+		</div>
+		<div id="data-arc-size1"></div>
+		<i class="fa fa-question-circle data-size-help"
+			data-tooltip-title="<?php _e('Archive Size', 'duplicator'); ?>"
+			data-tooltip="<?php _e('This size includes only files BEFORE compression is applied. It does not include the size of the '
+						. 'database script or any applied filters.  Once complete the package size will be smaller than this number.', 'duplicator'); ?>"></i>
+
+		<div class="dup-data-size-uncompressed"><?php _e("uncompressed"); ?></div>
 	</div>
 </div>
 
@@ -53,7 +60,7 @@ TOTAL SIZE -->
 				echo "<b>" . __('Overview', 'duplicator') . ":</b><br/>";
 
 				printf(__('This notice is triggered at <b>%s</b> and can be ignored on most hosts.  If during the build process you see a "Host Build Interrupt" message then this '
-					. 'host has strict processing limits.  Below are some options you can take to overcome constraints setup on this host.', 'duplicator'),
+					. 'host has strict processing limits.  Below are some options you can take to overcome constraints set up on this host.', 'duplicator'),
 					DUP_Util::byteSize(DUPLICATOR_SCAN_SIZE_DEFAULT));
 
 				echo '<br/><br/>';
@@ -61,7 +68,7 @@ TOTAL SIZE -->
 				echo "<b>" . __('Timeout Options', 'duplicator') . ":</b><br/>";
 				echo '<ul>';
 				echo '<li>' . __('Apply the "Quick Filters" below or click the back button to apply on previous page.', 'duplicator') . '</li>';
-				echo '<li>' . __('See the FAQ link to adjust this hosts timeout limits: ', 'duplicator') . "&nbsp;<a href='https://snapcreek.com/duplicator/docs/faqs-tech/#faq-trouble-100-q' target='_blank'>" . __('What can I try for Timeout Issues?', 'duplicator') . '</a></li>';
+				echo '<li>' . __('See the FAQ link to adjust this hosts timeout limits: ', 'duplicator') . "&nbsp;<a href='https://snapcreek.com/duplicator/docs/faqs-tech/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_campaign=problem_resolution&utm_content=pkg_s2scan3_tolimits#faq-trouble-100-q' target='_blank'>" . __('What can I try for Timeout Issues?', 'duplicator') . '</a></li>';
 				echo '<li>' . __('Consider trying multi-threaded support in ', 'duplicator');
 				echo "<a href='https://snapcreek.com/duplicator/?utm_source=duplicator_free&utm_medium=wordpress_plugin&utm_content=multithreaded_pro&utm_campaign=duplicator_pro' target='_blank'>" . __('Duplicator Pro.', 'duplicator') . "</a>";
 				echo '</li>';
@@ -114,8 +121,8 @@ TOTAL SIZE -->
 								_e('No large files found during this scan.', 'duplicator');
 							} else {
 								echo "<div style='color:maroon'>";
-								_e('No large files found during this scan.  If your having issues building a package click the back button and try '
-									. 'adding the following file filters to non-essential files paths like wp-conent/uploads.   These filtered files can then '
+									_e('No large files found during this scan.  If you\'re having issues building a package click the back button and try '
+									. 'adding a file filter to non-essential files paths like wp-content/uploads.   These excluded files can then '
 									. 'be manually moved to the new location after you have ran the migration installer.', 'duplicator');
 								echo "</div>";
 							}
@@ -124,16 +131,11 @@ TOTAL SIZE -->
 				</div>
 			</div>
 
-			<?php
-				if ($zip_check != null) {
-					echo '<div style="text-align:center; font-weight:bold; font-style:italic; float:left">&nbsp;';
-					_e('Package support up to 2GB in', 'duplicator');
-					echo '&nbsp;<a href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&amp;utm_medium=wordpress_plugin&amp;utm_content=free_size_warn&amp;utm_campaign=duplicator_pro" target="_blank">' . __('Professional', 'duplicator') . '</a>';
-					echo '</div>';
-				}
-			?>
 
 			<div class="apply-btn" style="margin-bottom:5px;float:right">
+				<div class="apply-warn">
+					 <?php _e('*Checking a directory will exclude all items recursively from that path down.<br/>Please use caution when filtering directories.', 'duplicator'); ?>
+				</div>
 				<button type="button" class="button-small" onclick="Duplicator.Pack.applyFilters(this, 'large')">
 					<i class="fa fa-filter"></i> <?php _e('Add Filters &amp; Rescan', 'duplicator');?>
 				</button>
@@ -149,6 +151,59 @@ TOTAL SIZE -->
 	</div>
 </div>
 
+<!-- ======================
+ADDON SITES -->
+<div id="addonsites-block"  class="scan-item">
+	<div class='title' onclick="Duplicator.Pack.toggleScanItem(this);">
+		<div class="text"><i class="fa fa-caret-right"></i> <?php _e('Addon Sites');?></div>
+		<div id="data-arc-status-addonsites"></div>
+	</div>
+    <div class="info">
+        <div style="margin-bottom:10px;">
+            <small>
+            <?php
+                printf(__('An "Addon Site" is a separate WordPress site(s) residing in subdirectories within this site. If you confirm these to be separate sites, '
+					. 'then it is recommended that you exclude them by checking the corresponding boxes below and clicking the \'Add Filters & Rescan\' button.  To backup the other sites '
+					. 'install the plugin on the sites needing to be backed-up.'));
+            ?>
+            </small>
+        </div>
+        <script id="hb-addon-sites" type="text/x-handlebars-template">
+            <div class="container">
+                <div class="hdrs">
+                    <span style="font-weight:bold">
+                        <?php _e('Quick Filters'); ?>
+                    </span>
+                </div>
+                <div class="data">
+                    {{#if ARC.FilterInfo.Dirs.AddonSites.length}}
+                        {{#each ARC.FilterInfo.Dirs.AddonSites as |path|}}
+                        <div class="directory">
+                            <input type="checkbox" name="dir_paths[]" value="{{path}}" id="as_dir_{{@index}}"/>
+                            <label for="as_dir_{{@index}}" title="{{path}}">
+                                {{path}}
+                            </label>
+                        </div>
+                        {{/each}}
+                    {{else}}
+                    <?php _e('No add on sites found.'); ?>
+                    {{/if}}
+                </div>
+            </div>
+            <div class="apply-btn">
+                <div class="apply-warn">
+                    <?php _e('*Checking a directory will exclude all items in that path recursively.'); ?>
+                </div>
+                <button type="button" class="button-small" onclick="Duplicator.Pack.applyFilters(this, 'addon')">
+                    <i class="fa fa-filter"></i> <?php _e('Add Filters &amp; Rescan');?>
+                </button>
+            </div>
+        </script>
+        <div id="hb-addon-sites-result" class="hb-files-style"></div>
+    </div>
+</div>
+
+
 <!-- ============
 FILE NAME CHECKS -->
 <div class="scan-item scan-item-last">
@@ -162,7 +217,7 @@ FILE NAME CHECKS -->
             _e('<b>');
             _e('  Only consider using this filter if the package build is failing. Select files that are not important to your site or you can migrate manually.', 'duplicator');
             _e('</b>');
-			$txt = __('If this environment/system and the system where it will be installed are setup to support Unicode and long paths then these filters can be ignored.  '
+			$txt = __('If this environment/system and the system where it will be installed are set up to support Unicode and long paths then these filters can be ignored.  '
 				. 'If you run into issues with creating or installing a package, then is recommended to filter these paths.', 'duplicator');
 		?>
 		<script id="hb-files-utf8" type="text/x-handlebars-template">
@@ -212,6 +267,9 @@ FILE NAME CHECKS -->
 				</div>
 			</div>
 			<div class="apply-btn">
+				<div class="apply-warn">
+					 <?php _e('*Checking a directory will exclude all items recursively from that path down.<br/>Please use caution when filtering directories.', 'duplicator'); ?>
+				</div>
 				<button type="button" class="button-small" onclick="Duplicator.Pack.applyFilters(this, 'utf8')">
 					<i class="fa fa-filter"></i> <?php _e('Add Filters &amp; Rescan', 'duplicator');?>
 				</button>
@@ -231,17 +289,22 @@ DATABASE -->
 	<div class="scan-header">
 		<i class="fa fa-table"></i>
 		<?php _e("Database", 'duplicator');	?>
-		<i class="fa fa-question-circle data-size-help"
-			data-tooltip-title="<?php _e("Database Size:", 'duplicator'); ?>"
-			data-tooltip="<?php _e('The database size represents only the included tables. The process for gathering the size uses the query SHOW TABLE STATUS.  '
-				. 'The overall size of the database file can impact the final size of the package.', 'duplicator'); ?>"></i>
-		<div id="data-db-size1"></div>
-		<div class="dup-scan-filter-status">
-			<?php
-				if ($Package->Database->FilterOn) {
-					echo '<i class="fa fa-filter"></i> '; _e('Enabled', 'duplicator');
-				}
-			?>
+		<div class="scan-header-details">
+			<div class="dup-scan-filter-status">
+				<?php
+					if ($Package->Database->FilterOn) {
+						echo '<i class="fa fa-filter"></i> '; _e('Enabled', 'duplicator');
+					}
+				?>
+			</div>
+			<div id="data-db-size1"></div>
+			<i class="fa fa-question-circle data-size-help"
+				data-tooltip-title="<?php _e("Database Size:", 'duplicator'); ?>"
+				data-tooltip="<?php _e('The database size represents only the included tables. The process for gathering the size uses the query SHOW TABLE STATUS.  '
+					. 'The overall size of the database file can impact the final size of the package.', 'duplicator'); ?>"></i>
+
+			<div class="dup-data-size-uncompressed"><?php _e("uncompressed"); ?></div>
+
 		</div>
 	</div>
 
@@ -292,6 +355,12 @@ DATABASE -->
 			?>
 		</div>
 	</div>
+	<?php
+        echo '<div class="dup-pro-support">&nbsp;';
+        _e('Migrate large, multi-gig sites with', 'duplicator');
+        echo '&nbsp;<i><a href="https://snapcreek.com/duplicator/?utm_source=duplicator_free&amp;utm_medium=wordpress_plugin&amp;utm_content=free_size_warn_multigig&amp;utm_campaign=duplicator_pro" target="_blank">' . __('Duplicator Pro', 'duplicator') . '!</a></i>';
+        echo '</div>';
+	?>
 </div>
 <br/><br/>
 
@@ -321,8 +390,8 @@ DIALOG: Scan Results -->
 	
 	<!-- PACKAGE -->
 	<h2><i class="fa fa-archive"></i> <?php _e('Package', 'duplicator');?></h2>
-	<b><?php _e('Name', 'duplicator');?>:</b> <?php echo $_POST['package-name']; ?><br/>
-	<b><?php _e('Notes', 'duplicator');?>:</b> <?php echo strlen($_POST['package-notes']) ? $_POST['package-notes'] : __('- no notes -', 'duplicator') ; ?>
+	<b><?php _e('Name', 'duplicator');?>:</b> <?php echo $Package->Name; ?><br/>
+	<b><?php _e('Notes', 'duplicator');?>:</b> <?php echo $Package->Notes; ; ?>
 	<br/><br/>
 
 	<!-- DATABASE -->
@@ -452,6 +521,7 @@ jQuery(document).ready(function($)
 		$(dir).is(':checked')
 			? $.each($checks, function() {$(this).attr({disabled : true, checked : false, title : '<?php _e('Directory applied filter set.', 'duplicator');?>'});})
 			: $.each($checks, function() {$(this).removeAttr('disabled checked title');});
+		$('div.apply-warn').show(300);
 	}
 
 	//Opens a dialog to show scan details
@@ -530,7 +600,19 @@ jQuery(document).ready(function($)
 		$btn.html('<i class="fa fa-circle-o-notch fa-spin"></i> <?php _e('Initializing Please Wait...', 'duplicator');?>');
 		$btn.attr('disabled', 'true');
 
-		var id = (type == 'large') ? '#hb-files-large-result' : '#hb-files-utf8-result'
+		//var id = (type == 'large') ? '#hb-files-large-result' : '#hb-files-utf8-result'
+		var id = '';
+        switch(type){
+            case 'large':
+                id = '#hb-files-large-result';
+                break;
+            case 'utf8':
+                id = '#hb-files-utf8-result';
+                break;
+            case 'addon':
+                id = '#hb-addon-sites-result';
+                break;
+        }
 		var dirFilters  = [];
 		var fileFilters = [];
 		$(id + " input[name='dir_paths[]']:checked").each(function()  {dirFilters.push($(this).val());});
@@ -575,6 +657,12 @@ jQuery(document).ready(function($)
 		var templateScript = Handlebars.compile(template);
 		var html = templateScript(data);
 		$('#hb-files-large-result').html(html);
+
+		//ADDON SITES
+        var template = $('#hb-addon-sites').html();
+        var templateScript = Handlebars.compile(template);
+        var html = templateScript(data);
+        $('#hb-addon-sites-result').html(html);
 
 		//NAME CHECKS
 		var template = $('#hb-files-utf8').html();
@@ -642,7 +730,7 @@ jQuery(document).ready(function($)
 	}
 
 	<?php
-		if (isset($_GET['retry'])) {
+		if (isset($_GET['retry']) && $_GET['retry'] == '1' ) {
 			echo "$('#scan-itme-file-size').show(300)";
 		}
 	?>

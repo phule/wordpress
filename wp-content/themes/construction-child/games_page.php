@@ -7,7 +7,7 @@ get_header();
 $temp = $wp_query; 
 $wp_query = null; 
 $wp_query = new WP_Query(); 
-$wp_query->query(['showposts'=>20,
+$wp_query->query(['showposts'=>10,
     'post_type'=>'game',
     'order'=> 'ASC',
     'orderby'=> 'name',
@@ -58,6 +58,24 @@ while ($wp_query->have_posts()) {
         if($field_name == "platform"){
             $platform = $field['value'];
         }
+        if($field_name == "platform_adroid"){
+            $platform = $field['value'];
+        }
+        if($field_name == "platform_black_berry"){
+            $platform = $field['value'];
+        }
+        if($field_name == "platform_play_station"){
+            $platform = $field['value'];
+        }
+        if($field_name == "platform_ios"){
+            $platform = $field['value'];
+        }
+        if($field_name == "platform_window"){
+            $platform = $field['value'];
+        }
+        if($field_name == "platform_xbox"){
+            $platform_xbox = $field['value'];
+        }
     }           
 ?>
     <li>
@@ -74,43 +92,43 @@ while ($wp_query->have_posts()) {
                 if($val == "ios"){
             ?>
             <dd class="ios">
-                <img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/ios.png" />
-                <img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/ios@3x.png" />
+                <a href="<?php echo $platform_ios;?>"><img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/ios.png" /></a>
+                <a href="<?php echo $platform_ios;?>"><img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/ios@3x.png" /></a>
             </dd>
                 <?php
                 }elseif($val == "window"){
                 ?>
             <dd class="win">
-                <img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/win.png" />
-                <img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/win@3x.png" />
+                <a href="<?php echo $platform_window;?>"><img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/win.png" /></a>
+                <a href="<?php echo $platform_window;?>"><img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/win@3x.png" /></a>
             </dd>
                 <?php
                 }elseif($val == "android"){
                 ?>
             <dd class="android">
-                <img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/android.png" />
-                <img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/android@3x.png" />
+                <a href="<?php echo $platform_adroid;?>"><img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/android.png" /></a>
+                <a href="<?php echo $platform_adroid;?>"><img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/android@3x.png" /></a>
             </dd>
             <?php
                 }elseif($val == "blackberry"){
                 ?>
             <dd class="blackberry">
-                <img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/blackberry.png" />
-                <img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/blackberry@3x.png" />
+                <a href="<?php echo $platform_black_berry;?>"><img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/blackberry.png" /></a>
+                <a href="<?php echo $platform_black_berry;?>"><img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/blackberry@3x.png" /></a>
             </dd>
             <?php
                 }elseif($val == "xbox"){
                 ?>
-            <dd class="blackberry">
-                <img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/xbox.png" />
-                <img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/xbox.png" />
+            <dd class="xbox">
+                <a href="<?php echo $platform_xbox;?>"><img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/xbox.png" /></a>
+                <a href="<?php echo $platform_xbox;?>"><img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/xbox.png" /></a>
             </dd>
             <?php
                 }elseif($val == "playstation"){
                 ?>
-            <dd class="blackberry">
-                <img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/playstation.png" />
-                <img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/playstation.png" />
+            <dd class="playstation">
+                <a href="<?php echo $platform_play_station;?>"><img class="img-normal" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/playstation.png" /></a>
+                <a href="<?php echo $platform_play_station;?>"><img class="img-retina" alt="" src="<?php echo get_template_directory_uri()?>/content/images/ui/pages/home/games/platform/playstation.png" /></a>
             </dd>
             <?php
                 }
