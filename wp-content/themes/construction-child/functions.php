@@ -139,13 +139,15 @@ add_action( 'widgets_init', 'construction_widgets_init' );
 function construction_scripts() {
     wp_enqueue_style('owl-carousel',get_template_directory_uri() . '/content/css/libs/owl.carousel.css');
     wp_enqueue_style('style',get_template_directory_uri(). '/content/css/style.css');
+    wp_enqueue_style('select2',get_template_directory_uri(). '/content/css/libs/select2.css');
 	
     wp_enqueue_script('owl_carousel_js', get_template_directory_uri() . '/content/js/libs/owl.carousel.js');
     wp_enqueue_script('ui_core_js', get_template_directory_uri() . '/content/js/ui-core.js');
 	wp_enqueue_script('ui_master_js', get_template_directory_uri() . '/content/js/ui-master.js');
     wp_enqueue_script('home_js',get_theme_file_uri('/content/js/pages/home.js'));
     wp_enqueue_script('details_js',get_theme_file_uri('/content/js/pages/details.js'));
-    //wp_enqueue_script('games_js',get_theme_file_uri('/content/js/pages/games.js'));
+    wp_enqueue_script('games_js',get_theme_file_uri('/content/js/pages/games.js'));
+    wp_enqueue_script('select2',get_theme_file_uri('/content/js/libs/select2.js'));
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
