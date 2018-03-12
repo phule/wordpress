@@ -1058,57 +1058,8 @@ dl {
 
 .home-page section.banner {
   height: 720px;
-  position: relative; }
-  .home-page section.banner .hero-mouse-scrolldown {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    text-align: center; }
-  .home-page section.banner [class*="icon-"] {
-    font-family: 'ubisoft-icons';
-    -webkit-font-smoothing: antialiased;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    line-height: 1;
-    speak: none;
-    text-transform: none; }
-  .home-page section.banner .icon-mouse-scrolldown::before {
-    /*content: "\e902";*/
-    width: 53px;
-    height: 32px;
-    display: block;
-    z-index: 9999; }
-  .home-page section.banner .icon-mouse-scrolldown {
-    cursor: pointer;
-    text-shadow: #000000 1px 1px 2px;
-    position: absolute;
-    margin-left: -38px;
-    bottom: 20px;
-    color: white;
-    font-size: 73px;
-    -webkit-animation: mouse 1s ease 0s infinite;
-    animation: mouse 1s ease 0s infinite;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-    -webkit-animation-timing-function: ease;
-            animation-timing-function: ease;
-    -webkit-animation-delay: 0s;
-            animation-delay: 0s;
-    -webkit-animation-direction: normal;
-            animation-direction: normal;
-    -webkit-animation-fill-mode: none;
-            animation-fill-mode: none;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-    -webkit-animation-play-state: running;
-            animation-play-state: running;
-    -webkit-animation-name: mouse;
-            animation-name: mouse;
-    background-image: url("../images/ui/banner/arrow_scroll_down.png");
-    width: 53px;
-    height: 32px;
-    display: block; }
+  position:relative;
+  }
 
 .home-page .banner-bg {
   position: fixed;
@@ -1144,33 +1095,97 @@ dl {
       .home-page .banner-bg video {
         display: none; } }
 
+.home-page .hero-mouse-scrolldown {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    text-align: center;
+}
+
+.home-page [class*="icon-"] {
+    font-family: 'ubisoft-icons';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+}
+
+
+
+.home-page .icon-mouse-scrolldown::before {
+
+    /*content: "\e902";*/
+	
+	width:53px;
+	height:32px;
+	display:block;
+	z-index:9999;
+
+}
+
+.home-page .icon-mouse-scrolldown {
+    cursor: pointer;
+    text-shadow: #000000 1px 1px 2px;
+    position: absolute;
+    margin-left: -38px;
+    bottom: 20px;
+    color: white;
+    font-size: 73px;
+    -webkit-animation: mouse 1s ease 0s infinite;
+    animation: mouse 1s ease 0s infinite;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+    animation-name: mouse;
+	background-image: url("../images/ui/banner/arrow_scroll_down.png");
+	width:53px;
+	height:32px;
+	display:block;
+}
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mouse {
   /* line 120, ../../../workspace/styles/games/_games-base.scss */
   0% {
-    -webkit-transform: translate3d(0px, 0px, 0px); }
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+
   /* line 121, ../../../workspace/styles/games/_games-base.scss */
   50% {
-    -webkit-transform: translate3d(0px, -10px, 0px); }
+    -webkit-transform: translate3d(0px, -10px, 0px);
+  }
+
   /* line 122, ../../../workspace/styles/games/_games-base.scss */
   100% {
-    -webkit-transform: translate3d(0px, 0px, 0px); } }
+    -webkit-transform: translate3d(0px, 0px, 0px);
+  }
+}
 
 /* Standard syntax */
 @keyframes mouse {
   /* line 127, ../../../workspace/styles/games/_games-base.scss */
   0% {
-    -webkit-transform: translate3d(0px, 0px, 0px);
-            transform: translate3d(0px, 0px, 0px); }
+    transform: translate3d(0px, 0px, 0px);
+  }
+
   /* line 128, ../../../workspace/styles/games/_games-base.scss */
   50% {
-    -webkit-transform: translate3d(0px, -10px, 0px);
-            transform: translate3d(0px, -10px, 0px); }
+    transform: translate3d(0px, -10px, 0px);
+  }
+
   /* line 129, ../../../workspace/styles/games/_games-base.scss */
   100% {
-    -webkit-transform: translate3d(0px, 0px, 0px);
-            transform: translate3d(0px, 0px, 0px); } }
-
+    transform: translate3d(0px, 0px, 0px);
+  }
+}
+		
 .home-page section.about {
   text-align: center;
   padding-top: 70px;
@@ -1179,8 +1194,11 @@ dl {
     .home-page section.about {
       padding-top: 35px; } }
   .home-page section.about h4 {
-    font-size: 1.5em;
-    font-weight: normal;
+    /*font-size: 1.5em;
+    font-weight: normal;*/
+	  	font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
     margin: 0 0 21px; }
     @media only screen and (max-width: 767px) {
       .home-page section.about h4 {
@@ -1190,12 +1208,9 @@ dl {
     line-height: 36px;
     font-family: "HelveticaNeue-Bold", sans-serif;
     font-weight: 900; }
-    @media only screen and (max-width: 991px) {
-      .home-page section.about .h2 {
-        font-size: 1.5em; } }
     @media only screen and (max-width: 767px) {
       .home-page section.about .h2 {
-        font-size: 1em;
+        font-size: 1.25em;
         line-height: 26px; } }
   .home-page section.about .socials-section {
     width: 660px;
@@ -1218,8 +1233,8 @@ dl {
       width: 25%;
       text-align: center;
       padding: 0 15px;
-      margin-top: 70px;
-      margin-bottom: 70px; }
+      margin-top: 25px;
+      margin-bottom: 40px; }
       @media only screen and (max-width: 767px) {
         .home-page section.about .socials-nav li {
           width: 50%;
@@ -1260,9 +1275,15 @@ dl {
   background: #fff; }
 
 .home-page section.partner h4 {
-  font-size: 1.5em;
-  margin: 0 0 42px;
-  font-weight: normal; }
+	font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
+	/*border-image: url("../images/ui/master/page/border_b.png");
+	border-image-repeat:;
+  border-bottom:2px solid black ;
+    padding-bottom:8px;
+	display:inline-block;
+  font-weight: normal;*/ }
 
 .home-page section.partner .owl-carousel .owl-stage-outer {
   margin-left: -13px;
@@ -1354,30 +1375,65 @@ dl {
   text-align: center;
   padding-top: 70px;
   padding-bottom: 70px;
-  background-image: url("../images/ui/pages/home/mission/bg.png"); }
+  /*background-image: url("../images/ui/pages/home/mission/bg.png");*/}
   @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
-    .home-page section.mission {
-      background-image: url("../images/ui/pages/home/mission/bg@3x.png"); } }
-  @media only screen and (max-width: 767px) {
-    .home-page section.mission {
-      padding-top: 35px;
-      padding-bottom: 35px; } }
+   /* .home-page section.mission {
+      background-image: url("../images/ui/pages/home/mission/bg@3x.png"); } */}
+
+.home-page section.quote {
+  background: center center no-repeat;
+  background-size: cover;
+  text-align: center;
+	height: 100%;
+	position: relative;
+	/*display: table-cell;
+	vertical-align: middle;
+  padding-top: 200px;
+  padding-bottom: auto;*/
+  /*background-image: url("../images/ui/pages/home/mission/bg.png");*/}
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+   /* .home-page section.mission {
+      background-image: url("../images/ui/pages/home/mission/bg@3x.png"); } */}
+
+.home-page section.mission .h2 {
+	
+	  font-size: 1.875em;
+  line-height: 36px;
+  color: #fff;
+  font-weight: normal;
+  font-family: "HelveticaNeue-Bold", sans-serif;
+	
+   }
+
+@media only screen and (max-width: 767px) {
+  .home-page section.mission {
+    padding-top: 35px;
+    padding-bottom: 35px; }
   .home-page section.mission .h2 {
-    font-size: 1.875em;
-    line-height: 36px;
-    color: #fff;
-    font-weight: normal;
-    font-family: "HelveticaNeue-Bold", sans-serif; }
-    @media only screen and (max-width: 991px) {
-      .home-page section.mission .h2 {
-        font-size: 1.5em; } }
-    @media only screen and (max-width: 767px) {
-      .home-page section.mission .h2 {
-        font-size: 1em;
-        line-height: 26px; } }
-    @media only screen and (max-width: 374px) {
-      .home-page section.mission .h2 br {
-        display: none; } }
+    font-size: 1.25em;
+    line-height: 26px; } }
+
+.home-page section.quote .h2 {
+font-size: 1.875em;
+  line-height: 36px;
+  color: #fff;
+	/*display: table-cell;
+    vertical-align: middle;*/
+  /*width: 50%;*/
+  height: 30%;
+  margin: auto;
+  position: absolute;
+  top: 75px; left: 15px; bottom: 0; right: 15px;
+  font-weight: normal;
+  font-family: "HelveticaNeue-Bold", sans-serif; }
+
+@media only screen and (max-width: 767px) {
+  .home-page section.quote {
+    padding-top: 35px;
+    padding-bottom: 35px; }
+  .home-page section.quote .h2 {
+    font-size: 1.25em;
+    line-height: 26px; } }
 
 .home-page section.games {
   /*background: center top;
@@ -1391,9 +1447,12 @@ dl {
   width: inherit; }
 
 .home-page section.games h4 {
-  font-size: 1.5em;
+		font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
+  /*font-size: 1.5em;*/
   line-height: 36px;
-  font-weight: normal;
+  /*font-weight: normal;*/
   text-align: center;
   margin: 0 0 46px; }
 
@@ -1439,11 +1498,7 @@ dl {
 
 .home-page section.games .list li h5 a {
   text-decoration: none;
-  color: #16181a;
-  display: block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; }
+  color: #16181a; }
 
 .home-page section.games .list li dl {
   font-size: 0.875em;
@@ -1503,8 +1558,138 @@ dl {
   .home-page section.games .list li {
     float: none;
     width: 100%;
-    margin-bottom: 23px; } }
+    margin-bottom: 23px; 
+	} 
+}
 
+	
+.details-page section.games {
+  /*background: center top;
+    background-size: 1600px auto;
+    @include retina3('../images/ui/pages/home/games/bg', 'png');*/
+  padding-top: 70px;
+  padding-bottom: 24px;
+  background: #fff; }
+
+.details-page section.games .t-container {
+  width: inherit; }
+
+.details-page section.games h4 {
+	font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
+  /*font-size: 1.5em;*/
+  line-height: 36px;
+  /*font-weight: normal;*/
+  text-align: center;
+  margin: 0 0 46px; }
+
+.details-page section.games .list {
+  margin: 0 -12px;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  text-align: center; }
+  .details-page section.games .list:before, .details-page section.games .list:after {
+    content: " ";
+    display: table; }
+  .details-page section.games .list:after {
+    clear: both; }
+
+.details-page section.games .list li {
+  padding-left: 12px;
+  padding-right: 12px;
+  width: calc(33.3333% - 4px);
+  margin-bottom: 46px;
+  display: inline-block; }
+
+.details-page section.games .list li.last {
+  display: none; }
+
+.details-page section.games .list li .frame {
+  display: block;
+  background: center center no-repeat;
+  background-size: cover;
+  margin-bottom: 4px; }
+
+.details-page section.games .list li .frame a {
+  text-decoration: none; }
+
+.details-page section.games .list li .frame a img {
+  width: 100%; }
+
+.details-page section.games .list li h5 {
+  font-size: 1.25em;
+  font-weight: normal;
+  margin: 0 0 4px;
+  text-align: left; }
+
+.details-page section.games .list li h5 a {
+  text-decoration: none;
+  color: #16181a; }
+
+.details-page section.games .list li dl {
+  font-size: 0.875em;
+  line-height: 20px;
+  margin: 0; }
+  .details-page section.games .list li dl:before, .details-page section.games .list li dl:after {
+    content: " ";
+    display: table; }
+  .details-page section.games .list li dl:after {
+    clear: both; }
+
+.details-page section.games .list li dl dt {
+  float: left;
+  margin: 0 8px 0 0; }
+
+.details-page section.games .list li dl dd {
+  float: left;
+  margin: 0 14px 0 0; }
+
+.details-page section.games .list li dl dd img {
+  max-height: 18px; }
+
+.details-page section.games .list li dl dd a {
+  text-decoration: none; }
+
+.details-page section.games .list li dl.platform dt {
+  margin-bottom: 5px; }
+
+.details-page section.games .list li dl.platform dd {
+  margin-bottom: 5px;
+  line-height: 0; }
+
+.details-page section.games .list li.clear {
+  clear: both;
+  margin: 0;
+  display: none; }
+
+.details-page section.games .list li.clear.three {
+  display: block; }
+
+@media (min-width: 1200px) {
+  .details-page section.games .list li {
+    width: calc(25% - 4px); }
+  .details-page section.games .list li.last {
+    display: inline-block; }
+  .details-page section.games .list li.clear.three {
+    display: none; }
+  .details-page section.games .list li.clear.four {
+    display: block; } }
+
+@media only screen and (max-width: 767px) {
+  .details-page section.games {
+    padding-top: 35px;
+    padding-bottom: 13px; }
+  .details-page section.games h4 {
+    margin: 0 0 23px; }
+  .details-page section.games .list li {
+    float: none;
+    width: 100%;
+    margin-bottom: 23px; } }
+	
+	
+	
 .home-page section.contact {
   padding-top: 70px;
   padding-bottom: 22px;
@@ -1514,8 +1699,11 @@ dl {
       padding-top: 35px;
       padding-bottom: 16px; } }
   .home-page section.contact h4 {
-    font-size: 1.5em;
-    font-weight: normal;
+	  	font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
+    /*font-size: 1.5em;
+    font-weight: normal;*/
     margin: 0 0 34px;
     text-align: center; }
     @media only screen and (max-width: 767px) {
@@ -1810,9 +1998,12 @@ dl {
   width: inherit; }
 
 .games-page section.games h4 {
-  font-size: 1.5em;
+		font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
+  /*font-size: 1.5em;*/
   line-height: 36px;
-  font-weight: normal;
+  /*font-weight: normal;*/
   text-align: center;
   margin: 0 0 42px; }
 
@@ -1856,11 +2047,7 @@ dl {
 
 .games-page section.games .list li h5 a {
   text-decoration: none;
-  color: #16181a;
-  display: block;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden; }
+  color: #16181a; }
 
 .games-page section.games .list li dl {
   font-size: 0.875em;
@@ -1945,9 +2132,12 @@ dl {
     @include retina3('../images/ui/pages/info/bg', 'png');*/ }
 
 .details-page section.info h4 {
-  font-size: 1.5em;
+  /*font-size: 1.5em;*/
+		font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
   line-height: 36px;
-  font-weight: normal;
+  /*font-weight: normal;*/
   text-align: center;
   margin: 0 0 59px; }
 
@@ -2057,9 +2247,12 @@ dl {
   width: inherit; }
 
 .details-page section.media h4 {
-  font-size: 1.5em;
+  /*ont-size: 1.5em;*/
+		font-family: "HelveticaNeue-Bold", sans-serif;
+  font-size: 1.2em;
+	font-weight:bold;
   line-height: 36px;
-  font-weight: normal;
+  /*font-weight: normal;*/
   text-align: center;
   margin: 0 0 53px; }
 

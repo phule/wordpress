@@ -353,15 +353,19 @@ add_action( 'init', 'virtue_toolkit_register_shortcodes');
 
 
 function virtue_toolkit_register_button( $buttons ) {
-   array_push( $buttons, "|", "kadcolumns" );
-   array_push( $buttons, "|", "kaddivider" );
-   array_push( $buttons, "|", "kadaccordion" );
-   array_push( $buttons, "|", "kadquote" );
-   array_push( $buttons, "|", "kadbtn" );
-   array_push( $buttons, "|", "kadicon" );
-   array_push( $buttons, "|", "kadyoutube" );
-   array_push( $buttons, "|", "kadvimeo" );      
-   return $buttons;
+	if ( empty( $buttons ) ) {
+		$buttons = array();
+	}
+	array_push( $buttons, "|", "kadcolumns" );
+	array_push( $buttons, "|", "kaddivider" );
+	array_push( $buttons, "|", "kadaccordion" );
+	array_push( $buttons, "|", "kadquote" );
+	array_push( $buttons, "|", "kadbtn" );
+	array_push( $buttons, "|", "kadicon" );
+	array_push( $buttons, "|", "kadyoutube" );
+	array_push( $buttons, "|", "kadvimeo" );
+
+	return $buttons;
 }
 function virtue_toolkit_add_plugin( $plugin_array ) {
    $plugin_array['kadcolumns'] = VIRTUE_TOOLKIT_URL . '/shortcodes/columns/columns_shortgen.js';
@@ -376,14 +380,13 @@ function virtue_toolkit_add_plugin( $plugin_array ) {
 }
 function virtue_toolkit_tinymce_shortcode_button() {
 
-   if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
-      return;
-   }
-
-   if ( get_user_option('rich_editing') == 'true' ) {
-      add_filter( 'mce_external_plugins', 'virtue_toolkit_add_plugin' );
-      add_filter( 'mce_buttons_3', 'virtue_toolkit_register_button' );
-   }
+	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+		return;
+	}
+	if ( get_user_option('rich_editing') == 'true' ) {
+		add_filter( 'mce_external_plugins', 'virtue_toolkit_add_plugin' );
+		add_filter( 'mce_buttons_3', 'virtue_toolkit_register_button', 50 );
+	}
 
 }
 add_action('init', 'virtue_toolkit_tinymce_shortcode_button');

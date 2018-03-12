@@ -3,7 +3,7 @@
 /*
 Plugin Name: Kadence Toolkit
 Description: Custom Portfolio and Shortcode functionality for free Kadence WordPress themes
-Version: 4.5
+Version: 4.8
 Author: Kadence Themes
 Author URI: https://kadencethemes.com/
 License: GPLv2 or later
@@ -33,15 +33,16 @@ if(!defined('VIRTUE_TOOLKIT_URL')){
 	define('VIRTUE_TOOLKIT_URL', plugin_dir_url(__FILE__) );
 }
 
-require_once('kadence_image_processing.php');
-require_once('post-types.php');
-require_once('gallery.php');
-require_once('author_box.php');
-require_once('shortcodes.php');
-require_once('shortcode_ajax.php');
-require_once('pagetemplater.php');
-require_once('metaboxes.php');
-require_once('welcome.php');
+require_once( VIRTUE_TOOLKIT_PATH . 'kadence_image_processing.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'post-types.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'gallery.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'author_box.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'shortcodes.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'shortcode_ajax.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'pagetemplater.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'metaboxes.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'welcome.php' );
+require_once( VIRTUE_TOOLKIT_PATH . 'widgets.php' );
 
 function virtue_toolkit_textdomain() {
   load_plugin_textdomain( 'virtue-toolkit', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' ); 
@@ -49,9 +50,14 @@ function virtue_toolkit_textdomain() {
 add_action( 'plugins_loaded', 'virtue_toolkit_textdomain' );
 
 
-function virtue_toolkit_admin_scripts() {
-  wp_register_style('virtue_toolkit_adminstyles', VIRTUE_TOOLKIT_URL . '/assets/toolkit_admin.css', false, 23);
-  wp_enqueue_style('virtue_toolkit_adminstyles');
+function virtue_toolkit_admin_scripts( $hook ) {
+	wp_enqueue_style( 'virtue_toolkit_adminstyles', VIRTUE_TOOLKIT_URL . '/assets/toolkit_admin.css', false, 46 );
+
+	if( $hook != 'edit.php' && $hook != 'post.php' && $hook != 'post-new.php' && $hook != 'widgets.php' ) {
+		return;
+	}
+	wp_enqueue_media();
+	wp_enqueue_script('toolkit_gallery_meta', VIRTUE_TOOLKIT_URL . '/assets/kttk_admin_gallery.js', array( 'jquery' ), 460, false);
 
 }
 

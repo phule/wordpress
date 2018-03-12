@@ -1,9 +1,9 @@
 === Kadence Themes Toolkit ===
 Contributors: britner
 Tags: 
-Requires at least: 4.0
-Tested up to: 4.8
-Stable tag: 4.5
+Requires at least: 4.2
+Tested up to: 4.9.2
+Stable tag: 4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,17 @@ Install the plugin into the `/wp-content/plugins/` folder, and activate it.
 
 
 == Changelog ==
+
+= 4.8 =
+* Small change in meta load.
+
+= 4.7 =
+* Fix issue with pagebuilder.
+
+= 4.6 =
+* Update: CMB.
+* Fix: issue with wrong fields showing.
+* Start moving image widget out of themes.
 
 = 4.5 =
 * Fix: issue of stripping out code.
