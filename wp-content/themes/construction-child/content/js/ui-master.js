@@ -66,7 +66,7 @@
             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                 shrinkOn = 87,
                 $header = $('#siteHeader');
-            if (distanceY >= shrinkOn) {
+            if (distanceY > shrinkOn) {
                 $header.addClass("smaller");
             } else {
                 if ($header.hasClass("smaller")) {

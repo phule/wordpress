@@ -22,17 +22,29 @@ $count_results = $wp_query->post_count?>
                 <li class="category">
                     <select class="js-select2">
                         <option>Category</option>
+                        <option value="Coming release">Coming release</option>
+                        <option value="Free to play">Free to play</option>
                     </select>
                 </li>
                 <li class="platform">
                     <select class="js-select2">
                         <option>Platform</option>
-                        <option>placeholder placeholder Select Platform</option>
+                        <option value="android" >Android</option>
+                        <option value="blackberry" >Black Berry</option>
+                        <option value="playstation" >Play Station</option>
+                        <option value="ios" >IOS</option>
+                        <option value="window" >Window</option>
+                        <option value="xbox">Xbox</option>
                     </select>
                 </li>
                 <li class="genre">
                     <select class="js-select2">
                         <option>Genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Puzzle">Puzzle</option>
+                        <option value="Cards">Cards</option>
                     </select>
                 </li>
                 <li class="keyword"><input type="text" placeholder="Keyword" class="input" /></li>

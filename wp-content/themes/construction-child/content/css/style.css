@@ -688,10 +688,34 @@ dl {
     color: #fff;
     line-height: 45px;
     padding: 0 19px; }
-  .sidebar nav dd a.active {
-    text-decoration: underline; }
+  .sidebar nav .current-menu-item > a {
+    font-weight: bold; }
   .sidebar-open .sidebar {
-    left: 0; } }
+    left: 0; }
+  .sidebar dd.menu-item-has-children {
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+    text-align: right; }
+  .sidebar dd.menu-item-has-children > a {
+    pointer-events: none; }
+  .sidebar dd.menu-item-has-children:hover > .sub-menu,
+  .sidebar dd.menu-item-has-children > a:active + .sub-menu {
+    display: block; }
+  .sidebar dd ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .sidebar dd > .sub-menu {
+    display: none;
+    -webkit-transition: all 0.3s linear 0s;
+    transition: all 0.3s linear 0s; }
+  .sidebar dd > .sub-menu li {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .sidebar dd > .sub-menu ul li {
+    padding-left: 0;
+    padding-right: 10px; } }
 
 .site-header {
   height: 87px;
@@ -736,33 +760,47 @@ dl {
 .site-header .main-nav {
   float: right; }
 
+.site-header .main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
 .site-header .main-nav li {
   padding-left: 35px; }
 
-.site-header .main-nav li.dropdown {
+.site-header .main-nav .current-menu-item > a {
+  font-weight: bold; }
+
+.site-header .main-nav > li.menu-item-has-children {
   padding-left: 35px;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  text-align: right; }
 
-.site-header .main-nav li.dropdown:hover .menu-dropdown,
-.site-header .main-nav li.dropdown a:active + .menu-dropdown {
+.site-header .main-nav > li.menu-item-has-children > a {
+  pointer-events: none; }
+
+.site-header .main-nav > li.menu-item-has-children:hover > .sub-menu,
+.site-header .main-nav > li.menu-item-has-children > a:active + .sub-menu {
   display: block; }
 
-.site-header .main-nav li .menu-dropdown {
+.site-header .main-nav > li > .sub-menu {
   display: none;
   position: absolute;
   right: -15px;
   top: 100%;
-  margin: 0;
   padding: 24px 0 0;
-  list-style: none;
   background-color: #16181a;
   -webkit-transition: all 0.3s linear 0s;
   transition: all 0.3s linear 0s; }
 
-.site-header .main-nav li .menu-dropdown li {
+.site-header .main-nav > li > .sub-menu li {
   padding-left: 15px;
   padding-right: 15px; }
+
+.site-header .main-nav > li > .sub-menu ul li {
+  padding-left: 0;
+  padding-right: 10px; }
 
 .site-header .main-nav a {
   display: inline-block;
@@ -772,7 +810,8 @@ dl {
   line-height: 41px;
   text-transform: uppercase;
   -webkit-transition: all 0.3s linear 0s;
-  transition: all 0.3s linear 0s; }
+  transition: all 0.3s linear 0s;
+  white-space: nowrap; }
 
 .site-header.smaller {
   height: 53px; }
@@ -1018,7 +1057,58 @@ dl {
     margin-left: 0; } }
 
 .home-page section.banner {
-  height: 720px; }
+  height: 720px;
+  position: relative; }
+  .home-page section.banner .hero-mouse-scrolldown {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    text-align: center; }
+  .home-page section.banner [class*="icon-"] {
+    font-family: 'ubisoft-icons';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none; }
+  .home-page section.banner .icon-mouse-scrolldown::before {
+    /*content: "\e902";*/
+    width: 53px;
+    height: 32px;
+    display: block;
+    z-index: 9999; }
+  .home-page section.banner .icon-mouse-scrolldown {
+    cursor: pointer;
+    text-shadow: #000000 1px 1px 2px;
+    position: absolute;
+    margin-left: -38px;
+    bottom: 20px;
+    color: white;
+    font-size: 73px;
+    -webkit-animation: mouse 1s ease 0s infinite;
+    animation: mouse 1s ease 0s infinite;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+    -webkit-animation-timing-function: ease;
+            animation-timing-function: ease;
+    -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+    -webkit-animation-direction: normal;
+            animation-direction: normal;
+    -webkit-animation-fill-mode: none;
+            animation-fill-mode: none;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+    -webkit-animation-name: mouse;
+            animation-name: mouse;
+    background-image: url("../images/ui/banner/arrow_scroll_down.png");
+    width: 53px;
+    height: 32px;
+    display: block; }
 
 .home-page .banner-bg {
   position: fixed;
@@ -1054,6 +1144,33 @@ dl {
       .home-page .banner-bg video {
         display: none; } }
 
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mouse {
+  /* line 120, ../../../workspace/styles/games/_games-base.scss */
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0px); }
+  /* line 121, ../../../workspace/styles/games/_games-base.scss */
+  50% {
+    -webkit-transform: translate3d(0px, -10px, 0px); }
+  /* line 122, ../../../workspace/styles/games/_games-base.scss */
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0px); } }
+
+/* Standard syntax */
+@keyframes mouse {
+  /* line 127, ../../../workspace/styles/games/_games-base.scss */
+  0% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px); }
+  /* line 128, ../../../workspace/styles/games/_games-base.scss */
+  50% {
+    -webkit-transform: translate3d(0px, -10px, 0px);
+            transform: translate3d(0px, -10px, 0px); }
+  /* line 129, ../../../workspace/styles/games/_games-base.scss */
+  100% {
+    -webkit-transform: translate3d(0px, 0px, 0px);
+            transform: translate3d(0px, 0px, 0px); } }
+
 .home-page section.about {
   text-align: center;
   padding-top: 70px;
@@ -1073,9 +1190,12 @@ dl {
     line-height: 36px;
     font-family: "HelveticaNeue-Bold", sans-serif;
     font-weight: 900; }
+    @media only screen and (max-width: 991px) {
+      .home-page section.about .h2 {
+        font-size: 1.5em; } }
     @media only screen and (max-width: 767px) {
       .home-page section.about .h2 {
-        font-size: 1.25em;
+        font-size: 1em;
         line-height: 26px; } }
   .home-page section.about .socials-section {
     width: 660px;
@@ -1238,21 +1358,26 @@ dl {
   @media only screen and (-webkit-min-device-pixel-ratio: 1.25), only screen and (min--moz-device-pixel-ratio: 1.25), only screen and (min-device-pixel-ratio: 1.25), only screen and (min-resolution: 120dpi), only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
     .home-page section.mission {
       background-image: url("../images/ui/pages/home/mission/bg@3x.png"); } }
-
-.home-page section.mission .h2 {
-  font-size: 1.875em;
-  line-height: 36px;
-  color: #fff;
-  font-weight: normal;
-  font-family: "HelveticaNeue-Bold", sans-serif; }
-
-@media only screen and (max-width: 767px) {
-  .home-page section.mission {
-    padding-top: 35px;
-    padding-bottom: 35px; }
+  @media only screen and (max-width: 767px) {
+    .home-page section.mission {
+      padding-top: 35px;
+      padding-bottom: 35px; } }
   .home-page section.mission .h2 {
-    font-size: 1.25em;
-    line-height: 26px; } }
+    font-size: 1.875em;
+    line-height: 36px;
+    color: #fff;
+    font-weight: normal;
+    font-family: "HelveticaNeue-Bold", sans-serif; }
+    @media only screen and (max-width: 991px) {
+      .home-page section.mission .h2 {
+        font-size: 1.5em; } }
+    @media only screen and (max-width: 767px) {
+      .home-page section.mission .h2 {
+        font-size: 1em;
+        line-height: 26px; } }
+    @media only screen and (max-width: 374px) {
+      .home-page section.mission .h2 br {
+        display: none; } }
 
 .home-page section.games {
   /*background: center top;
@@ -1314,7 +1439,11 @@ dl {
 
 .home-page section.games .list li h5 a {
   text-decoration: none;
-  color: #16181a; }
+  color: #16181a;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .home-page section.games .list li dl {
   font-size: 0.875em;
@@ -1727,7 +1856,11 @@ dl {
 
 .games-page section.games .list li h5 a {
   text-decoration: none;
-  color: #16181a; }
+  color: #16181a;
+  display: block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden; }
 
 .games-page section.games .list li dl {
   font-size: 0.875em;
